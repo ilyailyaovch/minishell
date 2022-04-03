@@ -6,7 +6,7 @@
 #    By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/03 09:51:48 by pleoma            #+#    #+#              #
-#    Updated: 2022/04/03 10:53:00 by pleoma           ###   ########.fr        #
+#    Updated: 2022/04/03 16:30:00 by pleoma           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,17 +27,17 @@ SOURCES	=	main.c\
 		
 all		: $(NAME)
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
+	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@ 
+
 $(NAME)	: $(OBJ) $(HEADER)
 	$(CC) $(FLAGS) $(OBJ) -o $@
 	@echo "compiled $@"
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER) Makefile
-	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@ 
-
 $(OBJDIR):
 		@mkdir $@
 
-$(OBJ): | $(OBJDIR)
+$(OBJ): $(OBJDIR)
 
 clean :
 	@rm -rf $(OBJDIR)
