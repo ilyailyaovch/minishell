@@ -37,7 +37,7 @@ $(NAME)	: $(OBJ) $(HEADER)
 $(OBJDIR):
 		@mkdir $@
 
-$(OBJ): $(OBJDIR)
+$(OBJ): | $(OBJDIR)
 
 clean :
 	@rm -rf $(OBJDIR)
