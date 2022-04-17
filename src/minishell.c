@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/03 10:52:34 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/04/17 09:48:45 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	minishell(void)
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
+	printf(BLUE"IT WORKS FINE"WTH);
+	printf("\n");
 }
