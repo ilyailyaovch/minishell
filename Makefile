@@ -15,6 +15,7 @@ NAME	=	minishell
 CC		=	cc
 FLAGS	=	-Wall -Wextra -Werror
 FLAGS_O	=	-O2
+RFLAG	=	-lreadline
 
 OBJDIR	=	obj
 SRCDIR	=	src
@@ -28,12 +29,13 @@ SOURCES	=	main.c\
 all		: $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
-	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@ 
+	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@
 
 $(NAME)	: $(OBJ) $(HEADER)
-	$(CC) $(FLAGS) $(OBJ) -o $@
-	@echo "compiled $@"
+	$(CC) $(FLAGS) $(OBJ) ${RFLAG} -o $@ 
 
+	@echo "compiled $@"
+	
 $(OBJDIR):
 		@mkdir $@
 
