@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/17 17:51:08 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/04/17 19:44:59 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@
 # define WTH "\033[0;37m"
 
 //	minishell.c //
+void	ft_error(int exit_code, char *argv);
 void	minishell(void);
 
 #endif

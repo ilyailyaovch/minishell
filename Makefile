@@ -30,6 +30,7 @@ OBJ		=	$(addprefix $(OBJDIR)/, $(SOURCES:.c=.o))
 SRC 	= 	$(addprefix $(SRCDIR)/, $(SOURCES))
 SOURCES	=	main.c\
 			minishell.c\
+			ft_errors.c\
 		
 all		: $(NAME)
 
@@ -37,7 +38,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@
 
 $(NAME)	: $(OBJ) $(HEADER)
-	$(CC) $(FLAGS) $(FLAGS_R) $(OBJ) -o $@ 
+	$(CC) $(FLAGS) $(FLAGS_R) $(OBJ) -o $@
 	@echo "compiled $@"
 	
 $(OBJDIR):

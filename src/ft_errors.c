@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/17 19:44:11 by pleoma           ###   ########.fr       */
+/*   Created: 2022/04/17 19:43:48 by pleoma            #+#    #+#             */
+/*   Updated: 2022/04/17 19:44:12 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	minishell(void)
+void	ft_error(int exit_code, char *argv)
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
-	while (true)
+	if (exit_code == -1)
 	{
-		char *str = readline(GREEN"myshell> "WTH);
-		add_history(str);
-		free(str);
+		printf(RED"command not found: "WTH);
+		printf("%s\n", argv);
+		exit(EXIT_FAILURE);
 	}
+	printf(RED"%s: "WTH, strerror(exit_code));
+	printf("%s\n", argv);
+	exit(EXIT_FAILURE);
 }
