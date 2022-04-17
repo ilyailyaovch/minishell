@@ -15,7 +15,12 @@ NAME	=	minishell
 CC		=	cc
 FLAGS	=	-Wall -Wextra -Werror
 FLAGS_O	=	-O2
-RFLAG	=	-lreadline
+
+RDFLAG	=	-lreadline
+TCFLAG	=	-ltermcap
+RL_LIB	=	readline/libreadline.a
+HS_LIB	=	readline/libhistory.a
+FLAGS_R =	$(RL_LIB) $(HS_LIB) $(RDFLAG) $(TCFLAG)
 
 OBJDIR	=	obj
 SRCDIR	=	src
@@ -32,8 +37,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@
 
 $(NAME)	: $(OBJ) $(HEADER)
-	$(CC) $(FLAGS) $(OBJ) ${RFLAG} -o $@ 
-
+	$(CC) $(FLAGS) $(FLAGS_R) $(OBJ) -o $@ 
 	@echo "compiled $@"
 	
 $(OBJDIR):

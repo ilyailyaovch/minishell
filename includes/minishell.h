@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/17 14:27:41 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/04/17 17:51:08 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
-# include <readline/readline.h>
-# include <readline/history.h>
+# include "../readline/tilde.h"
+# include "../readline/rlconf.h"
+# include "../readline/rlstdc.h"
+# include "../readline/history.h"
+# include "../readline/keymaps.h"
+# include "../readline/readline.h"
+# include "../readline/chardefs.h"
+# include "../readline/rltypedefs.h"
 
 
 # define RED "\033[0;31m"
