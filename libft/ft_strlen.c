@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/18 13:23:22 by pleoma           ###   ########.fr       */
+/*   Created: 2021/10/04 14:13:37 by pleoma            #+#    #+#             */
+/*   Updated: 2022/04/18 12:54:26 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
-void	minishell(void)
+size_t	ft_strlen(const char *str)
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
-	while (true)
-	{
-		char *str = readline(GREEN"myshell> "WTH);
-		add_history(str);
+	size_t	coun;
 
-		if (!ft_strncmp(str, "exit", 4))
-			ft_shell_error("exit", 0, EXIT_FLAG);
-			
-		free(str);
+	coun = 0;
+	while (str[coun] != '\0')
+	{
+		coun++;
 	}
+	return (coun);
 }

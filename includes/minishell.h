@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/17 19:44:59 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/04/18 13:12:58 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # include "../readline/chardefs.h"
 # include "../readline/rltypedefs.h"
 
+# include "../libft/libft.h"
 
 # define RED "\033[0;31m"
 # define GREEN "\033[0;32m"
@@ -35,8 +36,14 @@
 # define YELW "\033[1;33m"
 # define WTH "\033[0;37m"
 
+# define EXIT_FLAG 1
+
 //	minishell.c //
-void	ft_error(int exit_code, char *argv);
 void	minishell(void);
+
+//	ft_errors.c //
+void	ft_error(char *argv, int exit_code);
+void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
+
 
 #endif

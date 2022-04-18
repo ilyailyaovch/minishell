@@ -22,6 +22,9 @@ RL_LIB	=	readline/libreadline.a
 HS_LIB	=	readline/libhistory.a
 FLAGS_R =	$(RL_LIB) $(HS_LIB) $(RDFLAG) $(TCFLAG)
 
+LIBDIR	=	libft
+LIBFT	=	libft/libft.a
+
 OBJDIR	=	obj
 SRCDIR	=	src
 HEADER	=	includes/minishell.h
@@ -38,7 +41,8 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 	${CC} ${FLAGS} ${FLAGS_O} -c $< -o $@
 
 $(NAME)	: $(OBJ) $(HEADER)
-	$(CC) $(FLAGS) $(FLAGS_R) $(OBJ) -o $@
+	@make -C $(LIBDIR)/
+	$(CC) $(FLAGS) $(FLAGS_R) $(LIBFT) $(OBJ) -o $@
 	@echo "compiled $@"
 	
 $(OBJDIR):
@@ -48,10 +52,12 @@ $(OBJ): | $(OBJDIR)
 
 clean :
 	@rm -rf $(OBJDIR)
+	@make fclean -C $(LIBDIR)/
 	@echo "Removing obj"
 
 fclean : clean
 	@rm -f $(NAME)
+	@rm -f $(LIBFT)
 	@echo "Removing all"
 
 re : fclean all

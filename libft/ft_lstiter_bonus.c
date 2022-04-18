@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/18 13:23:22 by pleoma           ###   ########.fr       */
+/*   Created: 2022/04/18 11:38:28 by pleoma            #+#    #+#             */
+/*   Updated: 2022/04/18 11:39:08 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
-void	minishell(void)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
-	while (true)
-	{
-		char *str = readline(GREEN"myshell> "WTH);
-		add_history(str);
+	t_list	*temp;
 
-		if (!ft_strncmp(str, "exit", 4))
-			ft_shell_error("exit", 0, EXIT_FLAG);
-			
-		free(str);
+	if (!lst)
+		return ;
+	temp = lst;
+	while (temp)
+	{
+		f(temp->content);
+		temp = temp->next;
 	}
 }

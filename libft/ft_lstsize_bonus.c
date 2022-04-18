@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/18 13:23:22 by pleoma           ###   ########.fr       */
+/*   Created: 2022/04/18 11:34:01 by pleoma            #+#    #+#             */
+/*   Updated: 2022/04/18 11:34:23 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
-void	minishell(void)
+int	ft_lstsize(t_list *lst)
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
-	while (true)
-	{
-		char *str = readline(GREEN"myshell> "WTH);
-		add_history(str);
+	t_list	*tmp;
+	int		count;
 
-		if (!ft_strncmp(str, "exit", 4))
-			ft_shell_error("exit", 0, EXIT_FLAG);
-			
-		free(str);
+	if (!lst)
+		return (0);
+	count = 1;
+	tmp = lst;
+	while (tmp->next)
+	{
+		tmp = tmp->next;
+		count++;
 	}
+	return (count);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.c                                        :+:      :+:    :+:   */
+/*   ft_lstlen_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/18 13:23:22 by pleoma           ###   ########.fr       */
+/*   Created: 2022/04/18 11:36:01 by pleoma            #+#    #+#             */
+/*   Updated: 2022/04/18 11:36:11 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/minishell.h"
+#include "libft.h"
 
-void	minishell(void)
+int	ft_lstlen(t_list *lst)
 {
-	printf(BLUE"IT WORKS FINE\n"WTH);
-	while (true)
-	{
-		char *str = readline(GREEN"myshell> "WTH);
-		add_history(str);
+	int	count;
 
-		if (!ft_strncmp(str, "exit", 4))
-			ft_shell_error("exit", 0, EXIT_FLAG);
-			
-		free(str);
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
 	}
+	return (count);
 }
