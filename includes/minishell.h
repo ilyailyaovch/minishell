@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 14:45:38 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 19:10:07 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,7 @@ void	ft_free_mass(char **arr);
 void	ft_error(char *argv, int exit_code);
 void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
 
+/*	ft_parser.c */
+void	ft_parser(void);
 
 #endif

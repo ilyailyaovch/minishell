@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 17:30:58 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 19:09:42 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	minishell(void)
 		//	if (check_quots_pipe())
 			// 	continue ;
 		// 	prompt_pipe();
-		// 	lexer_parser();
+		ft_parser();
 		// 	signals();
 		// 	executor();
 		// 	ft_free_all();		
