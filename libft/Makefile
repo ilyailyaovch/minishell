@@ -6,7 +6,7 @@
 #    By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/04 12:34:59 by pleoma            #+#    #+#              #
-#    Updated: 2022/04/18 13:21:20 by pleoma           ###   ########.fr        #
+#    Updated: 2022/05/02 11:08:48 by pleoma           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRC 	=   ft_isalpha.c		ft_toupper.c		ft_substr.c\
 			ft_lstclear_bonus.c						ft_lstiter_bonus.c\
 			ft_lstdelone_bonus.c					ft_lstlast_bonus.c\
 			ft_lstmap_bonus.c						ft_lstlen_bonus.c\
-			#get_next_line.c\
+			get_next_line.c\
 
 OBJ 	= $(patsubst %.c,%.o,$(SRC))
 HEADER 	= libft.h

@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 11:30:45 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 10:00:28 by pleoma           ###   ########.fr       */
+/*   Created: 2021/10/12 18:44:12 by pleoma            #+#    #+#             */
+/*   Updated: 2022/05/02 12:16:37 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-t_list	*ft_lstlast(t_list *lst)
-{
-	t_list	*tmp;
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <limits.h>
 
-	if (!lst)
-		return (0);
-	tmp = lst;
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
-}
+# include   "libft.h"
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_get_buff_line(int fd, char *line);
+char	*ft_find_real_line(char *remain);
+char	*ft_get_next_buff_line(char *remain);
+
+#endif

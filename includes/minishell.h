@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/04/18 13:12:58 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 12:19:50 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,47 @@
 
 # define EXIT_FLAG 1
 
+typedef struct s_child
+{
+	int		current;
+	pid_t	pid;
+	int		pipe[2][2];
+	int		i;
+	int		len;
+}	t_child;
+
+typedef struct s_dict
+{
+	char			*key;
+	char			*value;
+	struct s_dict	*next;
+}	t_dict;
+
+typedef struct s_cmd
+{
+	char			*name;
+	char			**args;
+	char			*i;
+	t_dict			*infd;
+	t_dict			*outfd;
+	int				tmpfile;
+	int				count;
+	struct s_cmd	*next;
+}	t_cmd;
+
+typedef struct s_shell
+{
+	int		fd[3][2];
+	int		status;
+	char	*line;
+	char	**envp;
+	t_list	*list;
+	t_cmd	*cmd;
+}	t_shell;
+
 //	minishell.c //
 void	minishell(void);
+void	ft_readline(void);
 
 //	ft_errors.c //
 void	ft_error(char *argv, int exit_code);
