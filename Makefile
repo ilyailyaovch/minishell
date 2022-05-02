@@ -34,6 +34,8 @@ SRC 	= 	$(addprefix $(SRCDIR)/, $(SOURCES))
 SOURCES	=	main.c\
 			minishell.c\
 			ft_errors.c\
+			ft_free.c\
+			utils1.c\
 		
 all		: $(NAME)
 
