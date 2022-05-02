@@ -6,7 +6,11 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
+<<<<<<< HEAD
+/*   Updated: 2022/05/02 14:45:38 by pleoma           ###   ########.fr       */
+=======
 /*   Updated: 2022/05/02 13:47:26 by pleoma           ###   ########.fr       */
+>>>>>>> 6ed10b9d91b59b76dbc49e67ae50f7e674cbeffd
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +86,16 @@ t_shell	g_shell;
 /*	minishell.c */
 void	minishell(void);
 void	ft_readline(void);
+<<<<<<< HEAD
+
+/*	utils1.c */
+unsigned int	len_of_mass(char **mass);
+void			ft_new_envp(char **envp);
+
+/*	ft_free.c */
+void	ft_free_mass(char **arr);
+=======
+>>>>>>> 6ed10b9d91b59b76dbc49e67ae50f7e674cbeffd
 
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
