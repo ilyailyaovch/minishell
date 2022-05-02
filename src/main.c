@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:58:12 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 16:46:18 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 16:49:39 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int	main(int argc, char **argv, char **envp)
 	minishell();
 	ft_free_mass(g_shell.envp);
 	return (0);
+	//bebra
 }
