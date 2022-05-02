@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:58:12 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 12:18:27 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 13:49:19 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv, char **envp)
 		ft_error(argv[0], EINVAL);
 	//ft_new_envp(envp);
 	
-	// try gnl //
+	/*	try gnl */
 	int fd;
 	fd = open("/Users/pleoma/minishell/src/file", O_RDONLY);
 	printf ("file descriptor: %d\n", fd);

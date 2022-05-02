@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 12:19:50 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/02 13:47:26 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,14 @@ typedef struct s_shell
 	t_cmd	*cmd;
 }	t_shell;
 
-//	minishell.c //
+/* one global var */
+t_shell	g_shell;
+
+/*	minishell.c */
 void	minishell(void);
 void	ft_readline(void);
 
-//	ft_errors.c //
+/*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
 void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
 
