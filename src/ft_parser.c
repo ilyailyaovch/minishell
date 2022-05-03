@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/03 12:11:38 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 15:16:19 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*ft_pivot(int *i, char *redir)
 	return (tmp);
 }
 
-const char	*ft_str(int *i)
+static char	*ft_str(int *i)
 {
 	int		j;
 	char	*tmp;
