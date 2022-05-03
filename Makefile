@@ -36,6 +36,7 @@ SOURCES	=	main.c\
 			ft_errors.c\
 			ft_free.c\
 			utils1.c\
+			ft_executor.c\
 		
 all		: $(NAME)
 

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_errors.c                                        :+:      :+:    :+:   */
+/*   ft_executor.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/17 19:43:48 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 09:41:52 by pleoma           ###   ########.fr       */
+/*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
+/*   Updated: 2022/05/03 09:47:14 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/* Function handles standart errors by code */
+/* Makes pipes and executes cmds */
 
-void	ft_error(char *argv, int exit_code)
+void	executor(t_cmd *cmd)
 {
-	printf(RED"%s: "WTH, strerror(exit_code));
-	printf("%s\n", argv);
-	exit(EXIT_FAILURE);
-}
+	// t_child child;
 
-/* Function handles errors of myshell by argument */
-
-void	ft_shell_error(char *argv, int exit_code, int exit_flag)
-{
-	ft_putstr_fd(argv, 2);
-	ft_putstr_fd("\n", 2);
-	g_shell.status = exit_code;
-	if (exit_flag == EXIT_FLAG)
-		exit (exit_code);
+	//init_child()
+	// while()
+	// {
+	// 	check cd();
+	// 	pipe()
+	// 	fork()
+	// 	signals();
+	// 	work_woth_child()
+	// 	close();
+	// 	get_variables();
+	// }
+	// close();
+	// waitpid();
 }

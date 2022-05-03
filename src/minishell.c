@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 19:15:20 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/03 09:45:38 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	minishell(void)
 	printf(BLUE"WELLCUM to minishell by ...\n"WTH);
 	while (true)
 	{
-		//ft_init();
+		//ft_init_g_shell();
 		ft_readline();
 		//if (*t_shell.line && ft_strlen(g_line.line))
 		// {
