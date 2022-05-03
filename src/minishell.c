@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 14:06:57 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:10:11 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_readline(void)
 {
 	g_shell.line = readline(GREEN"myshell> "WTH);
 	if (!g_shell.line)
-		ft_shell_error("\033[1Amyshell> exit", 1, EXIT_FLAG);
+		ft_shell_error("\033[1A\033[0;32mmyshell>\033[0;37m exit", 1, EXIT_FLAG);
 	if (!ft_strncmp(g_shell.line , "exit", 4))
 		ft_shell_error("exit", 0, EXIT_FLAG);
 	add_history(g_shell.line);
