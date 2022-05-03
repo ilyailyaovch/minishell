@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:56:32 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 12:59:32 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 13:18:48 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	shell_handler(int sig)
 {
-	if (sig == SIGQUIT)
-	{
-		write(1, "Quit: 3\n", 8);
-		exit(0);
-	}
 	if (sig == SIGINT)
 	{
 		rl_on_new_line();
@@ -42,7 +37,7 @@ void	ft_signals(void)
 {
 	// signal(SIGINT, handler_quit);
 	// signal(SIGQUIT, handler_quit);
-	signal(SIGQUIT, shell_handler);
+	signal(SIGQUIT, SIG_IGN);
 	signal(SIGINT, shell_handler);
 }
 

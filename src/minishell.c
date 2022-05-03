@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 12:59:23 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 13:12:01 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_init_g_shell(void)
 {
 	//signal(SIGQUIT, SIG_IGN);
-	// signal(SIGINT, shell_handler);
+	//signal(SIGINT, shell_handler);
 	if ((pipe(g_shell.fd[0])) == -1)
 		ft_shell_error("minishell: pipe: ", errno, EXIT_FLAG);
 	if ((pipe(g_shell.fd[1])) == -1)
