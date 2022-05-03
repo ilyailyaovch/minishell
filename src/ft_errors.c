@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:43:48 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 14:11:12 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 16:45:15 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_error(char *argv, int exit_code)
 void	ft_shell_error(char *argv, int exit_code, int exit_flag)
 {
 	ft_putstr_fd(argv, 2);
-	ft_putstr_fd("\n", 2);
+	//ft_putstr_fd("\n", 2);
 	g_shell.status = exit_code;
 	if (exit_flag == EXIT_FLAG)
 		exit (exit_code);
