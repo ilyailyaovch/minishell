@@ -31,12 +31,13 @@ HEADER	=	includes/minishell.h
 
 OBJ		=	$(addprefix $(OBJDIR)/, $(SOURCES:.c=.o))
 SRC 	= 	$(addprefix $(SRCDIR)/, $(SOURCES))
-SOURCES	=	main.c\
+SOURCES	=	main.c				ft_parser.c\
 			minishell.c\
 			ft_errors.c\
 			ft_free.c\
 			utils1.c\
 			ft_executor.c\
+			ft_signals.c\
 		
 all		: $(NAME)
 

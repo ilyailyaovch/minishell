@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 09:47:14 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 12:11:30 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 /* Makes pipes and executes cmds */
 
-void	executor(t_cmd *cmd)
-{
+// void	executor(t_cmd *cmd)
+// {
 	// t_child child;
 
 	//init_child()
@@ -31,4 +31,4 @@ void	executor(t_cmd *cmd)
 	// }
 	// close();
 	// waitpid();
-}
+// }

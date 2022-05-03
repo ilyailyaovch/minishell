@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 09:40:55 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 12:50:57 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,9 @@ typedef struct s_shell
 t_shell	g_shell;
 
 /*	minishell.c */
-void	minishell(void);
+void	ft_init_g_shell(void);
 void	ft_readline(void);
+void	minishell(void);
 
 /*	utils1.c */
 unsigned int	len_of_mass(char **mass);
@@ -99,5 +100,11 @@ void	ft_parser(void);
 
 /*	ft_executor.c */
 void	executor(t_cmd *cmd);
+
+/*	ft_signals.c */
+void	shell_handler(int sig);
+void	ft_signals(void);
+void	ft_pipe_signals(void);
+
 
 #endif
