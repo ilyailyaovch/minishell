@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 12:50:57 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:21:46 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
 void	ft_parser(void);
 
 /*	ft_executor.c */
-void	executor(t_cmd *cmd);
+void	ft_executor(t_cmd *cmd);
 
 /*	ft_signals.c */
 void	shell_handler(int sig);

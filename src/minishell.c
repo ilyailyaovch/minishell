@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 14:10:11 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/03 14:54:25 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ void	minishell(void)
 		ft_init_g_shell();
 		ft_signals();
 		ft_readline();
-		//if (*t_shell.line && ft_strlen(g_line.line))
-		// {
-		//	if (check_quots_pipe())
-			// 	continue ;
-		// 	prompt_pipe();
-		ft_parser();
-		// ft_signals();
-		// 	executor();
-		// 	ft_free_all();		
-		// }
+		if (*g_shell.line && ft_strlen(g_shell.line))
+		{
+			//	if (check_quots_pipe())
+			// 		continue ;
+			// 	prompt_pipe();
+			ft_parser();
+			// ft_signals();
+			ft_executor(g_shell.cmd);
+			// 	ft_free_all();		
+		}
 	}
 }
