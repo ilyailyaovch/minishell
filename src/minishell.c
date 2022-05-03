@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/05/03 14:54:25 by pleoma           ###   ########.fr       */
+=======
+/*   Updated: 2022/05/03 15:32:47 by spzona           ###   ########.fr       */
+>>>>>>> refs/remotes/origin/main
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +49,7 @@ void	minishell(void)
 		ft_init_g_shell();
 		ft_signals();
 		ft_readline();
+<<<<<<< HEAD
 		if (*g_shell.line && ft_strlen(g_shell.line))
 		{
 			//	if (check_quots_pipe())
@@ -55,5 +60,20 @@ void	minishell(void)
 			ft_executor(g_shell.cmd);
 			// 	ft_free_all();		
 		}
+=======
+		//if (*t_shell.line && ft_strlen(g_line.line))
+		// {
+		//	if (check_quots_pipe())
+			// 	continue ;
+			// 	prompt_pipe();
+			//ft_sigil();
+			ft_parser();
+			//ft_rm_quotes();
+			//ft_get_cmd();
+		// ft_signals();
+		// 	executor();
+		// 	ft_free_all();		
+		// }
+>>>>>>> refs/remotes/origin/main
 	}
 }
