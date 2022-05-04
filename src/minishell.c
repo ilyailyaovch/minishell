@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/05/04 15:28:25 by pleoma           ###   ########.fr       */
+=======
+/*   Updated: 2022/05/04 16:08:06 by spzona           ###   ########.fr       */
+>>>>>>> 29d88b9aa93addd228252cf0eb4b9f8ede225d65
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +56,7 @@ void	minishell(void)
 			if (ft_one_pipe())
 				continue ;
 			ft_sigil();
-			ft_parser();				//?
+			ft_parser();
 			ft_remove_extra_quotes();	//?
 			//ft_get_cmd();
 			//ft_signals();				//не надо вроде
