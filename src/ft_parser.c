@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/03 16:23:18 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:29:51 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ void	ft_parser(void)
 	i = 0;
 	while (g_shell.line[i] != '\0')
 	{
+		//?
 		while (g_shell.line[i] != '\0' && (g_shell.line[i] == ' ' || g_shell.line[i] == '\t'
 			|| g_shell.line[i] == '\v' || g_shell.line[i] == '\f' || g_shell.line[i] == '\r'))
 			i++;

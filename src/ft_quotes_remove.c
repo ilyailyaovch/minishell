@@ -6,9 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:42:13 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 10:42:51 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:41:25 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+void	ft_rm_quotes(void)
+{
+	
+}

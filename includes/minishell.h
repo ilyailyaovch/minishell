@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 12:13:38 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:42:27 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,9 @@ int		ft_one_pipe(void);
 int		check_first_pipe(void);
 int		check_quotes(void);
 int		check_quotes_pipe(void);
+
+/*	ft_quotes_remove.c */
+void	ft_rm_quotes(void);
 
 /*	ft_sigil.c */
 void	ft_sigil(void);
