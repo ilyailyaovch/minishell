@@ -1,16 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_quotes.c                                        :+:      :+:    :+:   */
+/*   ft_quotes_pipes.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 15:26:34 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/03 16:49:02 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 10:33:48 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+/*	checks lasts pipe at the end of the line */
+
+int	check_last_pipe(char *line)
+{
+	int	coun;
+	int	pipe;
+
+	coun = 0;
+	pipe = 0;
+	while (line[coun])
+	{
+		if (line[coun] == '|')
+			pipe = 1;
+		else if (line[coun] != ' ')
+			pipe = 0;
+		coun++;
+	}
+	return (pipe);
+}
+
+/*	checks pipe at the end of the line and waits line */
+
+int	ft_one_pipe(void)
+{
+	char	*tmpline;
+	char	*tmpread;
+
+	while (check_last_pipe(g_shell.line))
+	{
+		tmpline = ft_strdup(g_shell.line);
+		free(g_shell.line);
+		tmpread = readline(" > ");
+		if (!tmpread)
+		{
+			ft_shell_error("\033[0;32mmyshell:\033[0;37m", 258, 0);
+			ft_shell_error(" syntax error: unexpected end of file\n", 258, 0);
+			return (1);
+		}
+		g_shell.line = ft_strjoin(tmpline, tmpread);
+		free(tmpread);
+		free(tmpline);
+	}
+	return (0);
+}
+
+/*	checks pipe at the beggining of the line */
 
 int	check_first_pipe(void)
 {
@@ -24,6 +71,8 @@ int	check_first_pipe(void)
 	else
 		return (1);
 }
+
+/*	checks unclosed quotes */
 
 int	check_quotes(void)
 {
@@ -53,6 +102,8 @@ int	check_quotes(void)
 	return (1);
 }
 
+/*	checks unclosed quotes and pipe at the beggining of the line and returns */
+
 int	check_quotes_pipe(void)
 {
 	if (!check_quotes())
@@ -72,4 +123,3 @@ int	check_quotes_pipe(void)
 	}
 	return (0);
 }
-

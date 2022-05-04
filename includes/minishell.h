@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/03 16:32:20 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 10:26:02 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,10 @@ void	shell_handler(int sig);
 void	ft_signals(void);
 void	ft_pipe_signals(void);
 
-/*	ft_quotes.c.c */
-int	check_first_pipe(void);
-int	check_quotes(void);
-int	check_quotes_pipe(void);
+/*	ft_quotes_pipes.c */
+int		ft_one_pipe(void);
+int		check_first_pipe(void);
+int		check_quotes(void);
+int		check_quotes_pipe(void);
 
 #endif
