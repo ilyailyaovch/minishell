@@ -34,7 +34,7 @@ SRC 	= 	$(addprefix $(SRCDIR)/, $(SOURCES))
 SOURCES	=	main.c				ft_parser.c\
 			minishell.c			ft_sigil.c\
 			ft_errors.c			ft_quotes_pipes.c\
-			ft_free.c\
+			ft_free.c			ft_quotes_remove.c\
 			utils1.c\
 			ft_executor.c\
 			ft_signals.c\
