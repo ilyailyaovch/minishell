@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:11:41 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/02 19:15:18 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 16:22:49 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+void	ft_free_all(void)
+{
+	ft_free_list(g_shell.list);
+}
 
 /*	frees array */
 
@@ -25,4 +30,20 @@ void	ft_free_mass(char **arr)
 		coun++;
 	}
 	free(arr);
+}
+
+/*	frees list */
+
+void	ft_free_list(t_list *a)
+{
+	t_list	*tmp;
+
+	tmp = a;
+	while (a)
+	{
+		tmp = a->next;
+		free(a->content);
+		free(a);
+		a = tmp;
+	}
 }

@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/04 15:28:25 by pleoma           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 16:08:06 by spzona           ###   ########.fr       */
->>>>>>> 29d88b9aa93addd228252cf0eb4b9f8ede225d65
+/*   Updated: 2022/05/04 16:29:35 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +53,20 @@ void	minishell(void)
 				continue ;
 			ft_sigil();
 			ft_parser();
-			ft_remove_extra_quotes();	//?
-			//ft_get_cmd();
+			ft_remove_extra_quotes();
+			ft_get_cmd();
 			//ft_signals();				//не надо вроде
 			ft_executor(g_shell.cmd);
-			//ft_free_all();
+			ft_free_all();
 
 			//Написать проверку на лист
-			t_list *tmp;
-			tmp = g_shell.list;	
-			while (tmp)
-			{
-				printf("Elem of list: %s\n", tmp->content);
-				tmp = tmp->next;
-			}
+			// t_list *tmp;
+			// tmp = g_shell.list;	
+			// while (tmp)
+			// {
+			// 	printf("Elem of list: %s\n", tmp->content);
+			// 	tmp = tmp->next;
+			// }
 ;
 		}
 	}

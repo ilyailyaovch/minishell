@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 13:58:29 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 16:25:30 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,12 @@ void	ft_readline(void);
 void	minishell(void);
 
 /*	ft_init.c */
-
 void			ft_new_envp(char **envp);
 
 /*	ft_free.c */
+void	ft_free_all(void);
 void	ft_free_mass(char **arr);
+void	ft_free_list(t_list *a);
 
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
@@ -97,6 +98,9 @@ void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
 
 /*	ft_parser.c */
 void	ft_parser(void);
+
+/*	ft_cmds.c */
+void	ft_get_cmd(void);
 
 /*	ft_executor.c */
 void	ft_executor(t_cmd *cmd);

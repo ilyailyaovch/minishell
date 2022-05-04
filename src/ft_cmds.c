@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_executor.c                                      :+:      :+:    :+:   */
+/*   ft_cmds.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 16:22:52 by pleoma           ###   ########.fr       */
+/*   Created: 2022/05/04 16:18:03 by pleoma            #+#    #+#             */
+/*   Updated: 2022/05/04 16:22:42 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/* Makes pipes and executes cmds */
-
-void	ft_executor(t_cmd *cmd)
+void	ft_get_cmd(void)
 {
-	(void) cmd;
-	// t_child child;
-
-	//init_child()
-	// while()
-	// {
-	// 	check cd();
-	// 	pipe()
-	// 	fork()
-	// 	signals();
-	// 	work_woth_child()
-	// 	close();
-	// 	get_variables();
-	// }
-	// close();
-	// waitpid();
-
-	printf("executor doesn't work\n");
+	printf("cmd doesn't work\n");
 }

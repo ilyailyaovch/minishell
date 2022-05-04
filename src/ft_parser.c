@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/04 15:34:21 by pleoma           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 16:08:10 by spzona           ###   ########.fr       */
->>>>>>> 29d88b9aa93addd228252cf0eb4b9f8ede225d65
+/*   Updated: 2022/05/04 16:22:45 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +101,6 @@ void	ft_parser(void)
 		if (!ft_strncmp(g_shell.line + i, ">>", 2))
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redirect(&i, ">>")));
 		else if (!ft_strncmp(g_shell.line + i, "<<", 2))
-<<<<<<< HEAD
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redirect(&i, "<<")));
 		else if (g_shell.line[i] == '|')
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '|')));
@@ -113,15 +108,6 @@ void	ft_parser(void)
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '>')));
 		else if (g_shell.line[i] == '<')
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '<')));
-=======
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_pivot(&i, "<<")));
-		else if (g_shell.line[i] == '>')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '>')));
-		else if (g_shell.line[i] == '<')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '<')));
-		else if (g_shell.line[i] == '|')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '|')));
->>>>>>> 29d88b9aa93addd228252cf0eb4b9f8ede225d65
 		else if (g_shell.line + i)
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)string(&i)));
 		i++;
