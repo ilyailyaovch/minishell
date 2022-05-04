@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 14:12:37 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:40:55 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,18 @@ void	minishell(void)
 			ft_parser();				//?
 			ft_remove_extra_quotes();	//?
 			//ft_get_cmd();
-			//ft_signals();
+			//ft_signals();				//не надо вроде
 			ft_executor(g_shell.cmd);
 			//ft_free_all();
 
-			//Написать проверку на листа		
+			//Написать проверку на лист
+			t_list *tmp;
+			tmp = g_shell.list;	
+			while (tmp)
+			{
+				printf("Elem of list: %s\n", tmp->content);
+				tmp = tmp->next;
+			}
 		}
 	}
 }
