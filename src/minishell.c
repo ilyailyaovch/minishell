@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 17:14:42 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 19:18:04 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,17 @@ void	minishell(void)
 			ft_remove_extra_quotes();
 			ft_get_cmd();
 			//ft_signals();				//не надо вроде
-			ft_executor(g_shell.cmd);
+			//ft_executor(g_shell.cmd);
 			ft_free_all();
 
 			//Написать проверку на лист
-			// t_list *tmp;
-			// tmp = g_shell.list;	
-			// while (tmp)
-			// {
-			// 	printf("Elem of list: %s\n", tmp->content);
-			// 	tmp = tmp->next;
-			// }
+			t_list *tmp;
+			tmp = g_shell.list;	
+			while (tmp)
+			{
+				printf("Elem of list: %s\n", tmp->content);
+				tmp = tmp->next;
+			}
 		}
 	}
 }
