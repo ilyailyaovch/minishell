@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 14:58:20 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:28:25 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	minishell(void)
 				printf("Elem of list: %s\n", tmp->content);
 				tmp = tmp->next;
 			}
+;
 		}
 	}
 }
