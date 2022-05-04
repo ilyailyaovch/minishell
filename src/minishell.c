@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/04 19:18:04 by spzona           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 19:24:38 by pleoma           ###   ########.fr       */
->>>>>>> e511a233ac365ec788038c417c9d20be5598e290
+/*   Updated: 2022/05/04 19:27:24 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +56,6 @@ void	minishell(void)
 			ft_remove_extra_quotes();
 			//ft_get_cmd();
 			//ft_signals();				//не надо вроде
-<<<<<<< HEAD
-			//ft_executor(g_shell.cmd);
-			ft_free_all();
-
-			//Написать проверку на лист
-			t_list *tmp;
-			tmp = g_shell.list;	
-			while (tmp)
-			{
-				printf("Elem of list: %s\n", tmp->content);
-				tmp = tmp->next;
-			}
-=======
 			//ft_executor(g_shell.cmd); //потом
 			//ft_free_all();			//вставить в конце
 
@@ -84,7 +67,6 @@ void	minishell(void)
 			// 	printf("Elem of list: %s\n", tmp->content);
 			// 	tmp = tmp->next;
 			// }
->>>>>>> e511a233ac365ec788038c417c9d20be5598e290
 		}
 	}
 }
