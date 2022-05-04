@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 10:40:48 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 12:13:38 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ void	ft_init_g_shell(void);
 void	ft_readline(void);
 void	minishell(void);
 
-/*	utils1.c */
-unsigned int	len_of_mass(char **mass);
+/*	ft_init.c */
+
 void			ft_new_envp(char **envp);
 
 /*	ft_free.c */
@@ -111,5 +111,13 @@ int		ft_one_pipe(void);
 int		check_first_pipe(void);
 int		check_quotes(void);
 int		check_quotes_pipe(void);
+
+/*	ft_sigil.c */
+void	ft_sigil(void);
+
+/*	ft_utils1.c */
+int	max(int a, int b);
+int	ft_len_before_eq(char *str);
+int	len_of_mass(char **mass);
 
 #endif
