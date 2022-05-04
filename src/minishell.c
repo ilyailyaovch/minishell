@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 12:43:05 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 14:12:37 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	minishell(void)
 			if (ft_one_pipe())
 				continue ;
 			ft_sigil();
-			//ft_parser();		//?
-			//ft_rm_quotes();	//?
+			ft_parser();				//?
+			ft_remove_extra_quotes();	//?
 			//ft_get_cmd();
 			//ft_signals();
 			ft_executor(g_shell.cmd);
