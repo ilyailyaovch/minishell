@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 16:25:30 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/04 18:25:05 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void	ft_free_all(void);
 void	ft_free_mass(char **arr);
 void	ft_free_list(t_list *a);
 
+
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
 void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
@@ -99,7 +100,7 @@ void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
 /*	ft_parser.c */
 void	ft_parser(void);
 
-/*	ft_cmds.c */
+/*	ft_get_cmd.c */
 void	ft_get_cmd(void);
 
 /*	ft_executor.c */
@@ -126,5 +127,18 @@ void	ft_sigil(void);
 int	max(int a, int b);
 int	ft_len_before_eq(char *str);
 int	len_of_mass(char **mass);
+
+/*	ft_cmds.c */
+t_cmd	*ft_cmdinit(void);
+int		ft_cmdlen(t_cmd *cmd);
+void	ft_free_cmd(t_cmd *cmd);
+t_cmd	*ft_cmd_last(t_cmd *lst);
+void	ft_cmdadd_back(t_cmd **lst,t_cmd *new);
+
+/*	ft_dicts.c */
+t_dict	*ft_dictinit(char *key, char *value);
+t_dict	*ft_dict_last(t_dict *lst);
+void	ft_free_dict(t_dict *dict);
+void	ft_dictadd_back(t_dict **lst, t_dict *new);
 
 #endif
