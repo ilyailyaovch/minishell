@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/04 16:05:46 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 16:08:10 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_quotes(int *i)
 		j++;
 	}
 	return (0);
-}	
+}
 
 static char	*ft_pivot(int *i, char *redir)
 {

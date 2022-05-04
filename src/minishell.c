@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 16:00:20 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 16:08:06 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,13 @@ void	minishell(void)
 			//ft_free_all();
 
 			//Написать проверку на лист
-			// t_list *tmp;
-			// tmp = g_shell.list;	
-			// while (tmp)
-			// {
-			// 	printf("Elem of list: %s\n", tmp->content);
-			// 	tmp = tmp->next;
-			// }
+			t_list *tmp;
+			tmp = g_shell.list;	
+			while (tmp)
+			{
+				printf("Elem of list: %s\n", tmp->content);
+				tmp = tmp->next;
+			}
 		}
 	}
 }
