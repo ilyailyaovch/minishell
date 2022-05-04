@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/04 14:46:06 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:18:09 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_quotes(int *i)
 		j++;
 	}
 	return (0);
-}	
+}
 
 static char	*ft_pivot(int *i, char *redir)
 {
@@ -62,7 +62,7 @@ static char	*ft_pivot(int *i, char *redir)
 		return (0);
 	tmp[0] = redir[0];
 	tmp[1] = redir[1];
-	tmp[2] = redir[2];
+	tmp[2] = '\0';
 	(*i)++;
 	return (tmp);
 }
