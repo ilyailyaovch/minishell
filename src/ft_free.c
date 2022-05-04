@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:11:41 by pleoma            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/04 17:20:31 by pleoma           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/04 18:30:56 by spzona           ###   ########.fr       */
->>>>>>> ef5cb6a64d535ee1ca809305b643455655293db5
+/*   Updated: 2022/05/04 19:24:09 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +15,7 @@
 void	ft_free_all(void)
 {
 	free(g_shell.line);
+	//ft_free_cmd(g_shell.cmd);
 	ft_free_list(g_shell.list);
 }
 
