@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cmds.c                                          :+:      :+:    :+:   */
+/*   ft_dicts.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 16:18:03 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 18:29:48 by spzona           ###   ########.fr       */
+/*   Created: 2022/05/04 17:22:58 by spzona            #+#    #+#             */
+/*   Updated: 2022/05/04 18:28:52 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-t_cmd	*ft_cmdinit(void)
+t_dict	*ft_dictinit(char *key, char *value)
 {
-	t_cmd	*res;
+	t_dict	*res;
 
 	res = malloc(sizeof(*res));
 	if (!res)
-		ft_error("ft_cmdinit(): ", ENOMEM);
+		ft_error("ft_dictinit(): ", ENOMEM);
 	res->next = NULL;
-	res->count = 0;
-	res->args = NULL;
-	res->outfd = NULL;
-	res->tmpfile = 0;
-	res->infd = NULL;
+	res->key = ft_strdup(key);
+	res->value = ft_strdup(value);
 	return (res);
 }
 
-int	ft_cmdlen(t_cmd *cmd)
+t_dict	*ft_dict_last(t_dict *lst)
 {
-	int	i;
-
-	i = 0;
-	while (cmd)
-	{
-		i++;
-		cmd = cmd->next;
-	}
-	return (i);
-}
-
-t_cmd	*ft_cmd_last(t_cmd *lst)
-{
-	t_cmd	*tmp;
+	t_dict	*tmp;
 
 	if (!lst)
 		return (0);
@@ -53,27 +37,25 @@ t_cmd	*ft_cmd_last(t_cmd *lst)
 	return (tmp);
 }
 
-void	ft_cmdadd_back(t_cmd **lst,t_cmd *new)
+void	ft_dictadd_back(t_dict **lst, t_dict *new)
 {
 	if (!*lst)
 		(*lst) = new;
-	else 
-		ft_cmd_last(*lst)->next = new;
+	else
+		ft_dict_last(*lst)->next = new;
 }
 
-void	ft_free_cmd(t_cmd *cmd)
+void	ft_free_dict(t_dict *dict)
 {
-	t_cmd	*tmp;
-	
-	tmp = cmd;
-	while (tmp)
+	t_dict	*tmp;
+
+	tmp = dict;
+	while (dict)
 	{
-		tmp = cmd->next;
-		ft_free_mass(cmd->args);
-		free(cmd->i);
-		ft_free_dict(cmd->infd);
-		ft_free_dict(cmd->outfd);
-		free(cmd);
-		cmd = tmp;
+		tmp = dict->next;
+		free(dict->key);
+		free(dict->value);
+		free(dict);
+		dict = tmp;
 	}
 }
