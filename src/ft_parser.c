@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/04 14:46:06 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 15:57:53 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static char	*ft_pivot(int *i, char *redir)
 		return (0);
 	tmp[0] = redir[0];
 	tmp[1] = redir[1];
-	tmp[2] = redir[2];
+	tmp[2] = '\0';
 	(*i)++;
 	return (tmp);
 }
@@ -104,11 +104,11 @@ void	ft_parser(void)
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_pivot(&i, ">>")));
 		else if (!ft_strncmp(g_shell.line + i, "<<", 2))
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_pivot(&i, "<<")));
-		else if (!ft_strncmp(g_shell.line + i, ">", 2))
+		else if (g_shell.line[i] == '>')
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '>')));
-		else if (!ft_strncmp(g_shell.line + i, "<", 2))
+		else if (g_shell.line[i] == '<')
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '<')));
-		else if (!ft_strncmp(g_shell.line + i, "|", 2))
+		else if (g_shell.line[i] == '|')
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_separator(&i, '|')));
 		else if (g_shell.line + i)
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)ft_str(&i)));

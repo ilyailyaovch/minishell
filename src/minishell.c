@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 14:50:53 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/04 16:00:20 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	minishell(void)
 			if (ft_one_pipe())
 				continue ;
 			ft_sigil();
-			ft_parser();				//?
+			ft_parser();
 			ft_remove_extra_quotes();	//?
 			//ft_get_cmd();
 			//ft_signals();				//не надо вроде
