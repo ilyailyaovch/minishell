@@ -6,7 +6,11 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/05/05 14:49:56 by spzona           ###   ########.fr       */
+=======
+/*   Updated: 2022/05/05 14:31:36 by pleoma           ###   ########.fr       */
+>>>>>>> 96a6e000525235b73e4304a956b760de0e6de5d6
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +72,14 @@ void	minishell(void)
 			// 	tmp = tmp->next;
 			// }
 
-			t_cmd	*tmp_c;
-			tmp_c = g_shell.cmd;
-			while (tmp_c)
-			{
-				printf("enumed cmd:\n");
-				tmp_c = tmp_c->next;
-			}
+			//Написать проверку на cmd
+			// t_cmd	*tmp_c;
+			// tmp_c = g_shell.cmd;
+			// while (tmp_c->i)
+			// {
+			// 	printf("enumed cmd: %s\n", tmp_c->i);
+			// 	tmp_c = tmp_c->next;
+			// }
 		}
 	}
 }

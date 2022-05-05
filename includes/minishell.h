@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 13:56:47 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 15:37:46 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,8 @@ void	ft_parser(void);
 void	ft_get_cmd(void);
 
 /*	ft_get_cmd_2.c */
+bool 	is_pipe(t_list	*tmp);
+bool 	is_redir(t_list	*tmp);
 void	enum_cmd(void);
 
 /*	ft_executor.c */
