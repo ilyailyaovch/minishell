@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 15:37:46 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 18:48:49 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,14 @@ void	ft_parser(void);
 
 /*	ft_get_cmd.c */
 void	ft_get_cmd(void);
+void	count_cmd(t_list *list);
+
 
 /*	ft_get_cmd_2.c */
 bool 	is_pipe(t_list	*tmp);
 bool 	is_redir(t_list	*tmp);
 void	enum_cmd(void);
+void	fill_ridirect(char *redir, char *file);
 
 /*	ft_executor.c */
 void	ft_executor(t_cmd *cmd);
