@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 19:27:24 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/05 14:49:56 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	minishell(void)
 			ft_sigil();
 			ft_parser();
 			ft_remove_extra_quotes();
-			//ft_get_cmd();
+			ft_get_cmd();
 			//ft_signals();				//не надо вроде
-			//ft_executor(g_shell.cmd); //потом
+			ft_executor(g_shell.cmd); 	//потом
 			//ft_free_all();			//вставить в конце
 
 			//Написать проверку на лист
@@ -67,6 +67,14 @@ void	minishell(void)
 			// 	printf("Elem of list: %s\n", tmp->content);
 			// 	tmp = tmp->next;
 			// }
+
+			t_cmd	*tmp_c;
+			tmp_c = g_shell.cmd;
+			while (tmp_c)
+			{
+				printf("enumed cmd:\n");
+				tmp_c = tmp_c->next;
+			}
 		}
 	}
 }

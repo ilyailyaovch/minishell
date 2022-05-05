@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/04 18:25:05 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/05 13:56:47 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ void	ft_free_all(void);
 void	ft_free_mass(char **arr);
 void	ft_free_list(t_list *a);
 
-
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
 void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
@@ -102,6 +101,9 @@ void	ft_parser(void);
 
 /*	ft_get_cmd.c */
 void	ft_get_cmd(void);
+
+/*	ft_get_cmd_2.c */
+void	enum_cmd(void);
 
 /*	ft_executor.c */
 void	ft_executor(t_cmd *cmd);
@@ -124,9 +126,9 @@ void	ft_remove_extra_quotes(void);
 void	ft_sigil(void);
 
 /*	ft_utils1.c */
-int	max(int a, int b);
-int	ft_len_before_eq(char *str);
-int	len_of_mass(char **mass);
+int		max(int a, int b);
+int		ft_len_before_eq(char *str);
+int		len_of_mass(char **mass);
 
 /*	ft_cmds.c */
 t_cmd	*ft_cmdinit(void);

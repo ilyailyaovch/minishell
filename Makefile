@@ -38,7 +38,7 @@ SOURCES	=	main.c				ft_parser.c\
 			ft_init.c			ft_cmds.c\
 			ft_executor.c		utils1.c\
 			ft_signals.c		ft_get_cmd.c\
-			ft_dicts.c\
+			ft_dicts.c			ft_get_cmd_2.c\
 		
 all		: $(NAME)
 

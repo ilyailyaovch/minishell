@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 14:44:13 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/04 16:29:04 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 13:48:41 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static char	*find_var(char **envp, char *line, int len)
 	j = -1;
 	while (envp[++j])
 	{
-		if (!ft_strncmp(name, envp[j], max(ft_len_before_eq(envp[j]),
-					ft_strlen(name))))
+		if (!ft_strncmp(name, envp[j],
+				max(ft_len_before_eq(envp[j]), ft_strlen(name))))
 		{
 			free(name);
 			name = ft_strdup(envp[j] + ft_len_before_eq(envp[j]) + 1);
