@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:01:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 13:54:47 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 19:11:57 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,18 @@ int	ft_len_before_eq(char *str)
 
 	i = 0;
 	while (str[i] != '=' && str[i] != '\0')
+		i++;
+	return (i);
+}
+
+/*	return array size as int */
+
+int	arr_size(char **envp)
+{
+	int	i;
+
+	i = 0;
+	while (envp[i])
 		i++;
 	return (i);
 }
