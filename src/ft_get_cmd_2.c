@@ -6,11 +6,23 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 15:37:56 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 18:37:14 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+void	fill_ridirect(char *redir, char *file)
+{
+	if (!ft_strncmp(">>", redir, 2))
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd, ft_dictinit(">>", file));
+	else if (!ft_strncmp("<<", redir, 2))
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd, ft_dictinit("<<", file));
+	else if (!ft_strncmp(">", redir, 1))
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd, ft_dictinit(">", file));
+	else if (!ft_strncmp("<", redir, 1))
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd, ft_dictinit("<", file));
+}
 
 bool is_pipe(t_list	*tmp)
 {
