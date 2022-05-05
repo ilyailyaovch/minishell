@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 19:26:33 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 20:20:52 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,15 @@ void	minishell(void)
 			//Написать проверку на cmd
 			// t_cmd	*tmp_c;
 			// tmp_c = g_shell.cmd;
-			// while (tmp_c->i)
+			// while (tmp_c)
 			// {
+			// 	printf("cmd	arg: %s\n", tmp_c->args[0]);
+			// 	printf("cmd	arg: %s\n", tmp_c->args[1]);
+			// 	printf("cmd	count: %d\n", tmp_c->count);
+			// 	//printf("cmd	in_dick_key: %s\n", tmp_c->infd->key);
+			// 	//printf("cmd	in_dick_value: %s\n", tmp_c->infd->value);
+			// 	printf("cmd	in_dick_key: %s\n", tmp_c->outfd->key);
+			// 	printf("cmd	in_dick_value: %s\n", tmp_c->outfd->value);
 			// 	printf("enumed cmd: %s\n", tmp_c->i);
 			// 	tmp_c = tmp_c->next;
 			// }

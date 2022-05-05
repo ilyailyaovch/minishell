@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/05 19:26:22 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 20:15:43 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	count_cmd(t_list *list)
 	t_list	*tmp;
 
 	tmp = list;
-	while (tmp && ft_strncmp("|", tmp->content, 1))
+	while (tmp && (is_pipe(tmp) == false))
 	{
-		if (!ft_strncmp(">", tmp->content, 1) || !ft_strncmp("<", tmp->content, 1))
-			tmp = tmp = tmp->next;
+		if (is_redir(tmp) == true)
+			tmp = tmp->next;
 		else
 			ft_cmd_last(g_shell.cmd)->count++;
 		tmp = tmp->next;
@@ -48,7 +48,7 @@ void	ft_get_cmd(void)
 	{
 		if (is_pipe(tmp_list) == false)
 		{
-			ft_cmdadd_back(&g_shell.cmd, ft_cmdnew());
+			ft_cmdadd_back(&g_shell.cmd, ft_cmdinit());
 			count_cmd(tmp_list);
 		}
 		while (tmp_list && (is_pipe(tmp_list) == false))

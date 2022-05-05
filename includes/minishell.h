@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 19:26:18 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 19:34:06 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void	ft_get_cmd(void);
 bool 	is_pipe(t_list	*tmp);
 bool 	is_redir(t_list	*tmp);
 void	enum_cmd(void);
-void	fill_ridirect(char *redir, char *file);
+void	fill_redirect(char *redir, char *file);
 void	fill_argument(void *content);
 
 /*	ft_executor.c */
@@ -135,7 +135,7 @@ void	ft_sigil(void);
 int		max(int a, int b);
 int		ft_len_before_eq(char *str);
 int		len_of_mass(char **mass);
-int	arr_size(char **envp);
+int		arr_size(char **envp);
 
 /*	ft_cmds.c */
 t_cmd	*ft_cmdinit(void);

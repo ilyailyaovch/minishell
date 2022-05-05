@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 19:25:51 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 20:15:19 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	fill_argument(void *content)
 
 	tmp = ft_cmd_last(g_shell.cmd);
 	if (tmp->args[0])
-		tmp->args = export_envp(tmp->args, content, 0);
+		tmp->args = put_envp(tmp->args, content, 0);
 	else 
 	{
 		tmp->args[0] = ft_strdup(content);
@@ -28,7 +28,7 @@ void	fill_argument(void *content)
 	}
 }
 
-void	fill_ridirect(char *redir, char *file)
+void	fill_redirect(char *redir, char *file)
 {
 	if (!ft_strncmp(">>", redir, 2))
 		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd, ft_dictinit(">>", file));
@@ -49,10 +49,10 @@ bool is_pipe(t_list	*tmp)
 
 bool is_redir(t_list	*tmp)
 {
-	if (ft_strncmp(">", tmp->content, 1) ||
-			ft_strncmp("<", tmp->content, 1))
-		return (false);
-	return (true);
+	if (!ft_strncmp(">", tmp->content, 1) ||
+			!ft_strncmp("<", tmp->content, 1))
+		return (true);
+	return (false);
 }
 
 /*	enumirates t_cmd */
