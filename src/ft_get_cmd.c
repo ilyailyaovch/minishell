@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_cmd.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 18:40:31 by spzona           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/05 18:22:44 by pleoma           ###   ########.fr       */
->>>>>>> a949e982e1781284adcf5f3a7fc9106423d2c52f
+/*   Updated: 2022/05/05 18:47:28 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +55,7 @@ void	ft_get_cmd(void)
 		{
 			if (is_redir(tmp_list) == true)
 			{
-				//fill_redirect(); //1
+				fill_redirect(tmp_list->content, tmp_list->next->content);
 				tmp_list = tmp_list->next;
 			}
 			else
