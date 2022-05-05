@@ -6,17 +6,29 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 18:40:31 by spzona           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/05 18:22:44 by pleoma           ###   ########.fr       */
->>>>>>> a949e982e1781284adcf5f3a7fc9106423d2c52f
+/*   Updated: 2022/05/05 19:19:45 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/* counting cmds while avoiding pipes*/
+/* filling args */
+
+void	fill_args(void *content)
+{
+	t_cmd	*tmp;
+
+	tmp = ft_cmd_last(g_shell.cmd);
+	if (tmp->args[0])
+		tmp->args = export_envp(tmp->args, content, 0);
+	else 
+	{
+		tmp->args[0] = ft_strdup(content);
+		tmp->args[1] = NULL;
+	}
+}
+
+/* counting cmds while avoiding pipes */
 	
 void	count_cmd(t_list *list)
 {

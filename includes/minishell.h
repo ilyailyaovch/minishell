@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 18:48:49 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/05 19:19:38 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ void	ft_sigil(void);
 int		max(int a, int b);
 int		ft_len_before_eq(char *str);
 int		len_of_mass(char **mass);
+int	arr_size(char **envp);
 
 /*	ft_cmds.c */
 t_cmd	*ft_cmdinit(void);
@@ -147,5 +148,8 @@ t_dict	*ft_dictinit(char *key, char *value);
 t_dict	*ft_dict_last(t_dict *lst);
 void	ft_free_dict(t_dict *dict);
 void	ft_dictadd_back(t_dict **lst, t_dict *new);
+
+/*	put_envp.c */
+char	**put_envp(char **envp, char *str, int free_flag);
 
 #endif
