@@ -6,31 +6,11 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 18:47:28 by pleoma           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/05 19:19:45 by spzona           ###   ########.fr       */
->>>>>>> 5d9e337a3838d06ca2efd07967618f9df678685a
+/*   Updated: 2022/05/05 19:26:22 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
-
-/* filling args */
-
-void	fill_args(void *content)
-{
-	t_cmd	*tmp;
-
-	tmp = ft_cmd_last(g_shell.cmd);
-	if (tmp->args[0])
-		tmp->args = export_envp(tmp->args, content, 0);
-	else 
-	{
-		tmp->args[0] = ft_strdup(content);
-		tmp->args[1] = NULL;
-	}
-}
 
 /* counting cmds while avoiding pipes */
 	
@@ -79,7 +59,7 @@ void	ft_get_cmd(void)
 				tmp_list = tmp_list->next;
 			}
 			else
-				//fill_argument(); //2
+				fill_argument(tmp_list->content);
 			tmp_list = tmp_list->next;
 		}
 		if (tmp_list)

@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_cmd_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 18:49:00 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/05 19:25:51 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+/* filling args with content from list */
+
+void	fill_argument(void *content)
+{
+	t_cmd	*tmp;
+
+	tmp = ft_cmd_last(g_shell.cmd);
+	if (tmp->args[0])
+		tmp->args = export_envp(tmp->args, content, 0);
+	else 
+	{
+		tmp->args[0] = ft_strdup(content);
+		tmp->args[1] = NULL;
+	}
+}
 
 void	fill_ridirect(char *redir, char *file)
 {
