@@ -6,15 +6,33 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 14:49:44 by spzona           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/05 15:55:17 by pleoma           ###   ########.fr       */
->>>>>>> 96a6e000525235b73e4304a956b760de0e6de5d6
+/*   Updated: 2022/05/05 18:40:31 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+/* counting cmds while avoiding pipes*/
+	
+void	count_cmd(t_list *list)
+{
+	t_cmd	*tmp_cmd;
+	t_list	*tmp;
+
+	tmp = list;
+	while (tmp && ft_strncmp("|", tmp->content, 1))
+	{
+		if (!ft_strncmp(">", tmp->content, 1) || !ft_strncmp("<", tmp->content, 1))
+			tmp = tmp = tmp->next;
+		else
+			ft_cmd_last(g_shell.cmd)->count++;
+		tmp = tmp->next;
+	}
+	tmp_cmd = ft_cmd_last(g_shell.cmd);
+	tmp_cmd->args = ft_calloc(tmp_cmd->count, sizeof(char *));
+	if (!tmp_cmd->args)
+		ft_error("count_cmd", ENOMEM);
+}
 
 /*	func fills t_cmd with needed commands and 
 	makes dict from special symbols	*/
@@ -31,7 +49,7 @@ void	ft_get_cmd(void)
 		if (is_pipe(tmp_list) == false)
 		{
 			ft_cmdadd_back(&g_shell.cmd, ft_cmdnew());
-			//count_cmd(tmp_list); //1
+			count_cmd(tmp_list);
 		}
 		while (tmp_list && (is_pipe(tmp_list) == false))
 		{
@@ -48,16 +66,4 @@ void	ft_get_cmd(void)
 			tmp_list = tmp_list->next;
 	}
 	enum_cmd();
-<<<<<<< HEAD
-	// while (tmp_list)
-	// {
-	// 	//if tmp_line = |
-	// 	//if tmp_line = redir
-	// 	//else fill tmp_line->conrent
-	// 	tmp_list = tmp_list->next;
-	// }
-	//printf("cmd doesn't work\n");
 }
-=======
-}
->>>>>>> 96a6e000525235b73e4304a956b760de0e6de5d6

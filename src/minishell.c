@@ -6,11 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/05 14:49:56 by spzona           ###   ########.fr       */
-=======
-/*   Updated: 2022/05/05 14:31:36 by pleoma           ###   ########.fr       */
->>>>>>> 96a6e000525235b73e4304a956b760de0e6de5d6
+/*   Updated: 2022/05/05 17:49:04 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +54,19 @@ void	minishell(void)
 			ft_sigil();
 			ft_parser();
 			ft_remove_extra_quotes();
-			ft_get_cmd();
+			//ft_get_cmd();
 			//ft_signals();				//не надо вроде
-			ft_executor(g_shell.cmd); 	//потом
+			//ft_executor(g_shell.cmd); 	//потом
 			//ft_free_all();			//вставить в конце
 
 			//Написать проверку на лист
-			// t_list *tmp;
-			// tmp = g_shell.list;
-			// while (tmp)
-			// {
-			// 	printf("Elem of list: %s\n", tmp->content);
-			// 	tmp = tmp->next;
-			// }
+			t_list *tmp;
+			tmp = g_shell.list;
+			while (tmp)
+			{
+				printf("Elem of list: %s\n", tmp->content);
+				tmp = tmp->next;
+			}
 
 			//Написать проверку на cmd
 			// t_cmd	*tmp_c;
