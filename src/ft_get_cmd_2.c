@@ -6,11 +6,26 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 14:21:59 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 15:37:56 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+bool is_pipe(t_list	*tmp)
+{
+	if (ft_strncmp("|", tmp->content, 1))
+		return (false);
+	return (true);
+}
+
+bool is_redir(t_list	*tmp)
+{
+	if (ft_strncmp(">", tmp->content, 1) ||
+			ft_strncmp("<", tmp->content, 1))
+		return (false);
+	return (true);
+}
 
 /*	enumirates t_cmd */
 

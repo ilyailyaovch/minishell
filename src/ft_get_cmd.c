@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/05 14:20:28 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/05 15:55:17 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,31 @@
 
 void	ft_get_cmd(void)
 {
-	//t_list	*tmp_list;
-	//t_cmd	*cmd;
+	t_list	*tmp_list;
+	t_cmd	*cmd;
 	
-	//md = g_shell.cmd;
-	//tmp_list = g_shell.list;
+	cmd = g_shell.cmd;
+	tmp_list = g_shell.list;
+	while (tmp_list)
+	{
+		if (is_pipe(tmp_list) == false)
+		{
+			ft_cmdadd_back(&g_shell.cmd, ft_cmdnew());
+			//count_cmd(tmp_list); //1
+		}
+		while (tmp_list && (is_pipe(tmp_list) == false))
+		{
+			if (is_redir(tmp_list) == true)
+			{
+				//fill_redirect(); //1
+				tmp_list = tmp_list->next;
+			}
+			else
+				//fill_argument(); //2
+			tmp_list = tmp_list->next;
+		}
+		if (tmp_list)
+			tmp_list = tmp_list->next;
+	}
 	enum_cmd();
-	// while (tmp_list)
-	// {
-	// 	//if tmp_line = |
-	// 	//if tmp_line = redir
-	// 	//else fill tmp_line->conrent
-	// 	tmp_list = tmp_list->next;
-	// }
-	//printf("cmd doesn't work\n");
 }
