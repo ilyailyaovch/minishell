@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:44:15 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 18:16:08 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/06 18:41:53 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char	*heredoc(char *delim)
 	char	*line;
 
 	tmpline1 = readline("heredoc > ");
-	if(!tmpline1)
-		return ("\0");
+	if (!tmpline1)
+		return (NULL);
 	line = NULL;
 	while (ft_strncmp(tmpline1, delim, ft_strlen(tmpline1)))
 	{
@@ -37,9 +37,7 @@ char	*heredoc(char *delim)
 			line = ft_strdup(tmpline2);
 		free(tmpline1);
 		free(tmpline2);
-		tmpline1 = readline("heredoc > ");
-		if(!tmpline1)
-			return ("\0");
+		tmpline1 = readline("heredoc > "); //если тут ctrl+D?
 	}
 	free(tmpline1);
 	return (line);
@@ -51,16 +49,18 @@ void	tmp_heredoc_file(char *delim, t_cmd *cmd)
 	char	*line;
 
 	line = heredoc(delim);
-	if (!line)
-		return ;
 	cmd->name = ft_strjoin(".tmpfile", cmd->i);
 	fd = open(cmd->name, O_WRONLY | O_TRUNC | O_CREAT, 0777);
 	if (fd < 0)
 		ft_shell_error(cmd->name, errno, EXIT_FLAG);
+	if (!line)
+	{
+		close(fd);
+		return ;
+	}
 	write(fd, line, ft_strlen(line));
 	close(fd);
-	if (line)
-		free(line);
+	free(line);
 	cmd->tmpfile = 1;
 }
 
