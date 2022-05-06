@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 15:48:32 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/06 16:51:09 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_executor(t_cmd *cmd)
 	t_child child;
 
 	ft_init_child(&child, cmd);
-	//ft_init_heredoc_instd(cmd);
+	ft_init_heredoc_instd(cmd);
 	
 	// while()
 	// {

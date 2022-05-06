@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:01:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 19:11:57 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/06 16:49:09 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 /*	finds len of two dimentional array
 	used in ft_init.c	*/
-
-int	len_of_mass(char **mass)
+int	arr_size(char **envp)
 {
-	int	coun;
+	int	i;
 
-	coun = 0;
-	while(mass[coun])
-		coun++;
-	return (coun);
+	i = 0;
+	while (envp[i])
+		i++;
+	return (i);
 }
+
 
 /*	finds man of two elements
 	used in ft_sigil.c	*/
@@ -45,18 +45,6 @@ int	ft_len_before_eq(char *str)
 
 	i = 0;
 	while (str[i] != '=' && str[i] != '\0')
-		i++;
-	return (i);
-}
-
-/*	return array size as int */
-
-int	arr_size(char **envp)
-{
-	int	i;
-
-	i = 0;
-	while (envp[i])
 		i++;
 	return (i);
 }

@@ -40,7 +40,7 @@ SOURCES	=	main.c				ft_parser.c\
 			ft_signals.c		ft_get_cmd.c\
 			ft_dicts.c			ft_get_cmd_2.c\
 			put_envp.c			ft_exec_childs.c\
-			ft_redirects.c\
+			ft_redir_heredoc.c\
 		
 all		: $(NAME)
 
