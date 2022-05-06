@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:44:15 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 18:41:53 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/06 18:47:22 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ char	*heredoc(char *delim)
 			line = ft_strdup(tmpline2);
 		free(tmpline1);
 		free(tmpline2);
-		tmpline1 = readline("heredoc > "); //если тут ctrl+D?
+		tmpline1 = readline("heredoc > ");
+		if (!tmpline1)
+			return (line);
 	}
 	free(tmpline1);
 	return (line);
