@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 19:34:06 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/06 15:45:36 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void	ft_readline(void);
 void	minishell(void);
 
 /*	ft_init.c */
-void			ft_new_envp(char **envp);
+void	ft_new_envp(char **envp);
 
 /*	ft_free.c */
 void	ft_free_all(void);
@@ -103,7 +103,6 @@ void	ft_parser(void);
 void	count_cmd(t_list *list);
 void	ft_get_cmd(void);
 
-
 /*	ft_get_cmd_2.c */
 bool 	is_pipe(t_list	*tmp);
 bool 	is_redir(t_list	*tmp);
@@ -111,8 +110,6 @@ void	enum_cmd(void);
 void	fill_redirect(char *redir, char *file);
 void	fill_argument(void *content);
 
-/*	ft_executor.c */
-void	ft_executor(t_cmd *cmd);
 
 /*	ft_signals.c */
 void	shell_handler(int sig);
@@ -152,5 +149,14 @@ void	ft_dictadd_back(t_dict **lst, t_dict *new);
 
 /*	put_envp.c */
 char	**put_envp(char **envp, char *str, int free_flag);
+
+/*	ft_executor.c */
+void	ft_executor(t_cmd *cmd);
+
+/*	ft_exec_childs.c */
+void	ft_init_child(t_child *child, t_cmd *cmd);
+
+/*	ft_redirects.c*/
+void	ft_init_heredoc_instd(t_cmd *cmd);
 
 #endif
