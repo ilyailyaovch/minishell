@@ -39,7 +39,8 @@ SOURCES	=	main.c				ft_parser.c\
 			ft_executor.c		utils1.c\
 			ft_signals.c		ft_get_cmd.c\
 			ft_dicts.c			ft_get_cmd_2.c\
-			put_envp.c\
+			put_envp.c			ft_exec_childs.c\
+			ft_redirects.c\
 		
 all		: $(NAME)
 
