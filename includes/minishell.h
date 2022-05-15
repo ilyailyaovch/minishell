@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/15 15:08:05 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/15 16:24:07 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,10 +155,11 @@ void	ft_executor(t_cmd *cmd);
 
 /*	ft_executor_2.c */
 void	check_exit(t_cmd *cmd);
-void	child_process(t_child *child, t_cmd *cmd, int len);
+void	collect_variables(void);
 
 /*	ft_exec_children.c */
 void	ft_init_child(t_child *child, t_cmd *cmd);
+void	child_process(t_child *child, t_cmd *cmd, int len);
 void	wait_children(int n);
 
 /*	ft_redir_heredoc.c*/
