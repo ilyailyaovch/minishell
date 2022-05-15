@@ -6,13 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 18:41:46 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/15 15:48:58 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/* Makes pipes and executes cmds */
+/* makes pipes and executes cmds */
 
 void	ft_executor(t_cmd *cmd)
 {
@@ -20,19 +20,26 @@ void	ft_executor(t_cmd *cmd)
 
 	ft_init_child(&child, cmd);
 	ft_init_heredoc_instd(cmd);
-	
-	// while()
-	// {
-	// 	check cd();
-	// 	pipe()
-	// 	fork()
-	// 	signals();
-	// 	work_woth_child()
-	// 	close();
-	// 	get_variables();
-	// }
-	// close();
-	// waitpid();
-
-	printf("executor doesn't work\n");
+	while(child.i < child.len) //цикл не готов лучше запускать без него
+	{
+		check_exit(cmd);
+		//check_cd();
+		if (pipe(child.pipe[child.current]) == -1)
+			ft_error("minishell: pipe: ", EPIPE);
+		child.pid = fork();
+		if (child.pid < 0)
+			ft_error("minishell: fork: ", errno);
+		if (child.pid)
+			ft_pipe_signals();
+		if (child.pid == 0)
+			//child_process(&child, cmd, child.len);
+		close(child.pipe[1 - child.current][0]);
+		close(child.pipe[child.current][1]);
+		child.current = 1 - child.current;
+		cmd = cmd->next;
+		child.i++;
+		//get_variables();
+	}
+	close(child.pipe[1 - child.current][0]);
+	wait_children(child.len);
 }

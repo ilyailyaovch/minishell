@@ -39,9 +39,10 @@ SOURCES	=	main.c				ft_parser.c\
 			ft_executor.c		utils1.c\
 			ft_signals.c		ft_get_cmd.c\
 			ft_dicts.c			ft_get_cmd_2.c\
-			put_envp.c			ft_exec_childs.c\
-			ft_redir_heredoc.c\
-		
+			put_envp.c			ft_exec_children.c\
+			ft_redir_heredoc.c	ft_executor_2.c\
+			ft_bins.c\
+
 all		: $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
