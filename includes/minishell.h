@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/15 16:24:07 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 10:33:43 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,6 @@ void	ft_sigil(void);
 /*	ft_utils1.c */
 int		max(int a, int b);
 int		ft_len_before_eq(char *str);
-int		len_of_mass(char **mass);
 int		arr_size(char **envp);
 
 /*	ft_cmds.c */
@@ -156,11 +155,16 @@ void	ft_executor(t_cmd *cmd);
 /*	ft_executor_2.c */
 void	check_exit(t_cmd *cmd);
 void	collect_variables(void);
+void	get_variables(void);
 
 /*	ft_exec_children.c */
 void	ft_init_child(t_child *child, t_cmd *cmd);
 void	child_process(t_child *child, t_cmd *cmd, int len);
 void	wait_children(int n);
+void	ft_execute(t_cmd *cmd);
+
+/*	ft_execute.c */
+void	ft_execute(t_cmd *cmd);
 
 /*	ft_redir_heredoc.c*/
 void	redirect_out(t_cmd *cmd);
@@ -171,5 +175,8 @@ void	ft_init_heredoc_instd(t_cmd *cmd);
 
 /*	ft_bins.c */
 void	ft_exit(t_cmd *cmd);
+void	ft_echo(t_cmd *cmd);
+void	ft_pwd(void);
+void	ft_env(void);
 
 #endif

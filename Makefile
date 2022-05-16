@@ -41,7 +41,7 @@ SOURCES	=	main.c				ft_parser.c\
 			ft_dicts.c			ft_get_cmd_2.c\
 			put_envp.c			ft_exec_children.c\
 			ft_redir_heredoc.c	ft_executor_2.c\
-			ft_bins.c\
+			ft_bins.c			ft_execute.c\
 
 all		: $(NAME)
 

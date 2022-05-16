@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/15 14:04:46 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 11:33:26 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	minishell(void)
 			ft_remove_extra_quotes();
 			ft_get_cmd();
 			//ft_signals();				//не надо вроде
-			ft_executor(g_shell.cmd); 	//потом
-			//ft_free_all();			//вставить в конце
+			ft_executor(g_shell.cmd); 	//
+			ft_free_all();				//
 
 			//Написать проверку на лист
 			// t_list *tmp;

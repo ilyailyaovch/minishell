@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/05 20:15:43 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 11:30:37 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_get_cmd(void)
 {
 	t_list	*tmp_list;
 	t_cmd	*cmd;
-	
+
 	cmd = g_shell.cmd;
 	tmp_list = g_shell.list;
 	while (tmp_list)

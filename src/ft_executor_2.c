@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:27:37 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/15 16:25:03 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 10:32:45 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,23 @@ void	collect_variables(void)
 	close (g_shell.fd[1][1]);
 	write(g_shell.fd[2][1], &g_shell.status, sizeof(int));
 	close (g_shell.fd[2][1]);
+}
+
+void	get_variables(void)
+{
+	int	i;
+	int	j;
+
+	read(g_shell.fd[1][0], &i, sizeof(int));
+	ft_free_mass(g_shell.envp);
+	g_shell.envp = malloc(sizeof(char *) * (i + 1));
+	j = 0;
+	while (j < i)
+	{
+		g_shell.envp[j] = get_next_line(g_shell.fd[0][0]);
+		g_shell.envp[j][ft_strlen(g_shell.envp[j]) - 1] = '\0';
+		j++;
+	}
+	g_shell.envp[j] = NULL;
+	read(g_shell.fd[2][0], &g_shell.status, sizeof(int));
 }

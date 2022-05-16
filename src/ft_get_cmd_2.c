@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/05 20:15:19 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 11:31:00 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	enum_cmd(void)
 	temp_cmd = g_shell.cmd;
 	while(temp_cmd)
 	{
-		// Можно переделать в инт
 		temp_cmd->i = ft_itoa(coun);
 		coun++;
 		temp_cmd = temp_cmd->next;

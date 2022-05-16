@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 15:24:43 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/15 16:19:01 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 11:07:07 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void	child_process(t_child *child, t_cmd *cmd, int len)
 		close (child->pipe[child->current][0]);
 		close (child->pipe[child->current][1]);
 	}
-	redirect_in(cmd);//есть ошибки
-	redirect_out(cmd);//есть ошибки
+	redirect_in(cmd);	//есть ошибки при несуществующем файле
+	redirect_out(cmd);	//есть ошибки
 	if (cmd->args[0])
-		//ft_execute(cmd);
+		ft_execute(cmd); //!!
 	collect_variables();
 	if (cmd->tmpfile)
 		unlink(cmd->name);
