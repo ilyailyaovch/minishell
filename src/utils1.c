@@ -6,14 +6,16 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:01:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 16:49:09 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 13:10:08 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 /*	finds len of two dimentional array
-	used in ft_init.c	*/
+	used in	ft_init.c 
+			put_envp.c	*/
+
 int	arr_size(char **envp)
 {
 	int	i;
@@ -25,7 +27,7 @@ int	arr_size(char **envp)
 }
 
 
-/*	finds man of two elements
+/*	finds max of two elements
 	used in ft_sigil.c	*/
 
 int	max(int a, int b)

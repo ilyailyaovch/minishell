@@ -35,13 +35,16 @@ SOURCES	=	main.c				ft_parser.c\
 			minishell.c			ft_sigil.c\
 			ft_errors.c			ft_quotes_pipes.c\
 			ft_free.c			ft_quotes_remove.c\
-			ft_init.c			ft_cmds.c\
-			ft_executor.c		utils1.c\
+			ft_init.c			ft_execute.c\
+			ft_executor.c		ft_executor_2.c\
 			ft_signals.c		ft_get_cmd.c\
 			ft_dicts.c			ft_get_cmd_2.c\
-			put_envp.c			ft_exec_children.c\
-			ft_redir_heredoc.c	ft_executor_2.c\
-			ft_bins.c			ft_execute.c\
+			put_envp.c			utils1.c\
+			ft_redir_heredoc.c	ft_exec_children.c\
+			ft_bins.c			ft_cmds.c\
+			ft_bins_cd.c\
+			ft_bins_export.c\
+			ft_bins_unset.c\
 
 all		: $(NAME)
 
