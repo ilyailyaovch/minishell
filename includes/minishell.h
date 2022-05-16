@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 10:33:43 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 14:40:25 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,5 +178,8 @@ void	ft_exit(t_cmd *cmd);
 void	ft_echo(t_cmd *cmd);
 void	ft_pwd(void);
 void	ft_env(void);
+
+/*	ft_bins_unset.c */
+char	**ft_unset(char **args, char **envp);
 
 #endif

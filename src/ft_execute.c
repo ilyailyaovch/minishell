@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:19:27 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 13:19:05 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/16 15:54:49 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,8 @@ static int	exucute_build_ins(t_cmd *cmd)
 		ft_env();
 	// else if (!ft_strncmp(cmd->args[0], "export", ft_strlen(cmd->args[0])))
 	// 	g_shell.envp = ft_export(cmd->args); 				//NOT
-	// else if (!ft_strncmp(cmd->args[0], "unset", ft_strlen(cmd->args[0])))
-	// 	g_shell.envp = ft_unset(cmd->args, g_shell.envp);	//NOT
+	else if (!ft_strncmp(cmd->args[0], "unset", ft_strlen(cmd->args[0])))
+		g_shell.envp = ft_unset(cmd->args, g_shell.envp);	//NOT
 	else
 		flag = 0;
 	return flag;
