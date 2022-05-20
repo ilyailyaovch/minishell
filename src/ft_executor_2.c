@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_executor_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Arbiter <Arbiter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:27:37 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 10:32:45 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/20 13:50:38 by Arbiter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,18 @@ void	collect_variables(void)
 	close (g_shell.fd[1][1]);
 	write(g_shell.fd[2][1], &g_shell.status, sizeof(int));
 	close (g_shell.fd[2][1]);
+}
+
+void	check_cd(t_cmd *cmd, int n)
+{
+	int	docmd;
+
+	if (ft_cmdlen(cmd) == 1 && !n)
+		docmd = 1;
+	else 
+		docmd = 0;
+	if (!ft_strncmp(cmd->args[0], "cd", ft_strlen(cmd->args[0])))
+		g_shell.envp = ft_cd(cmd->args, docmd);
 }
 
 void	get_variables(void)

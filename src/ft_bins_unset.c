@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Arbiter <Arbiter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:07:25 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 15:54:35 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/20 20:50:18 by Arbiter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	**unset_from_envp(char *args, char **envp)
 	which should be unset
 	returns 1 if variable exists	*/
 
-static int	check_unset(char *args, char **envp)
+int	check_unset(char *args, char **envp)
 {
 	int	i;
 

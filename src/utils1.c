@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Arbiter <Arbiter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:01:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 13:10:08 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/20 20:49:11 by Arbiter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,29 @@ int	ft_len_before_eq(char *str)
 	while (str[i] != '=' && str[i] != '\0')
 		i++;
 	return (i);
+}
+
+/*	errormanagment for cd	*/
+
+void	ifs(int j, int i, char *args, char *str)
+{
+	if (j == 1 && i)
+		chdir(str);
+	else if (j != 1)
+		ft_errmsg("minishell: cd: ", args, ": No such file or directory", -1);
+	else if (j == 1 && !i)
+		ft_errmsg("minishell: cd: ", args, ": Not a directory", -1);
+}
+
+void	ft_free(char **mass)
+{
+	int	sizemass;
+
+	sizemass = 0;
+	while (mass[sizemass])
+	{
+		free(mass[sizemass]);
+		sizemass++;
+	}
+	free(mass);
 }

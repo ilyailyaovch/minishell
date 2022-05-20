@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: Arbiter <Arbiter@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 14:40:25 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/20 20:54:11 by Arbiter          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <dirent.h>
+# include <signal.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <string.h>
 
 # include "../readline/tilde.h"
 # include "../readline/rlconf.h"
@@ -95,6 +100,7 @@ void	ft_free_list(t_list *a);
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
 void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
+void	ft_errmsg(char *s1, char *s2, char *s3, int code);
 
 /*	ft_parser.c */
 void	ft_parser(void);
@@ -129,9 +135,11 @@ void	ft_remove_extra_quotes(void);
 void	ft_sigil(void);
 
 /*	ft_utils1.c */
-int		max(int a, int b);
-int		ft_len_before_eq(char *str);
-int		arr_size(char **envp);
+int			max(int a, int b);
+int			ft_len_before_eq(char *str);
+int			arr_size(char **envp);
+void		ifs(int j, int i, char *args, char *str);
+void		ft_free(char **mass);
 
 /*	ft_cmds.c */
 t_cmd	*ft_cmdinit(void);
@@ -151,6 +159,7 @@ char	**put_envp(char **envp, char *str, int free_flag);
 
 /*	ft_executor.c */
 void	ft_executor(t_cmd *cmd);
+void	check_cd(t_cmd *cmd, int n);
 
 /*	ft_executor_2.c */
 void	check_exit(t_cmd *cmd);
@@ -181,5 +190,20 @@ void	ft_env(void);
 
 /*	ft_bins_unset.c */
 char	**ft_unset(char **args, char **envp);
+int	check_unset(char *args, char **envp);
+
+/*	ft_bins_export.c */
+char	**replace_envp_el(char **envp, char *args, char *new);
+char	**export_envp(char **envp, char *str, int free);
+int		ft_sym_export(char *str);
+
+/*	ft_bins_cd.c */
+void	inside_validpath(char *str, int j, char *old_path, char *args);
+void	validpath(char *args, char *old_path, int ifcd);
+char	**cd_oldpwd(char *old_path);
+char	*ft_strchr_for_mini(const char *s, int c);
+char	**ft_cd(char **args, int ifcd);
+
+
 
 #endif
