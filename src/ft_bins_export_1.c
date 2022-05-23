@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_export_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:07:21 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 11:30:41 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:39:34 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,8 @@ char	**ft_export(char **args)
 		while (args[i][++j])
 		{
 			if (!ft_isalpha(args[i][0]) || args[i][0] == '=')
-			{
-				ft_shell_error("minishell: export: `",0,0);
-				ft_shell_error(args[i],0,0);
-				ft_shell_error("': not a valid identifier\n",1,0);
-			}
+				ft_shell_error_multi("export: `",
+					args[i], "': not a valid identifier\n", 1);
 			else
 				change_envp(new, args, i);
 			break ;

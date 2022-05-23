@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_execute.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:19:27 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 11:31:03 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:49:04 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ static int	exucute_build_ins(t_cmd *cmd)
 	else if (!ft_strncmp(cmd->args[0], "env", ft_strlen(cmd->args[0])))
 		ft_env();
 	else if (!ft_strncmp(cmd->args[0], "export", ft_strlen(cmd->args[0])))
-	 	g_shell.envp = ft_export(cmd->args);
+		g_shell.envp = ft_export(cmd->args);
 	else if (!ft_strncmp(cmd->args[0], "unset", ft_strlen(cmd->args[0])))
 		g_shell.envp = ft_unset(cmd->args, g_shell.envp);
 	else
 		flag = 0;
-	return flag;
+	return (flag);
 }
 
 /*	func takes cmd and looks for right path to it

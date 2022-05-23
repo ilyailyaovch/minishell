@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_export_2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:31:34 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 11:05:26 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:41:53 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	**mass_quots_after(char **tmpmass)
 		after[i] = malloc(sizeof(char) * (ft_strlen(tmpmass[i])
 					- ft_sym_export(tmpmass[i]) + 1));
 		if (!after[i])
-			return (NULL); //Можно написать ошибку
+			return (NULL);
 		j = ft_sym_export(tmpmass[i]);
 		while (tmpmass[i][++j] != '\0')
 			after[i][k++] = tmpmass[i][j];
@@ -93,7 +93,7 @@ char	**mass_quots_before(char **tmpmass)
 		j = -1;
 		before[i] = malloc(sizeof(char) * (ft_sym_export(tmpmass[i]) + 1));
 		if (!before[i])
-			return (NULL); //Можно написать ошибку
+			return (NULL);
 		if (!ft_strchr(tmpmass[i], '='))
 			before[i] = ft_strdup(tmpmass[i]);
 		else

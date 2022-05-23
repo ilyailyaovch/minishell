@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:11:41 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 10:49:38 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:59:25 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_free_mass(char **arr)
 	int	coun;
 
 	coun = 0;
-	while(arr[coun])
+	while (arr[coun])
 	{
 		free(arr[coun]);
 		coun++;

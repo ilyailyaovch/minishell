@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:01:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 13:10:08 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:52:28 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	arr_size(char **envp)
 		i++;
 	return (i);
 }
-
 
 /*	finds max of two elements
 	used in ft_sigil.c	*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:07:25 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 11:29:42 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:45:28 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	check_unset(char *args, char **envp)
 /*	func replaces old envp with new
 	without unset varialble			*/
 
-static char **ft_make_unset_envp(char **args, char **envp, bool correct_usage)
+static char	**ft_make_unset_envp(char **args, char **envp, bool correct_usage)
 {	
-	int i;
+	int	i;
 
 	i = 0;
-	while(args[++i])
+	while (args[++i])
 	{
 		if (correct_usage && check_unset(args[i], envp))
 			envp = unset_from_envp(args[i], envp);
@@ -85,17 +85,17 @@ static void	ft_check_unset_usage(char **args, bool *correct_usage)
 	int	j;
 
 	i = 0;
-	while(args[i])
+	while (args[i])
 	{
-		j=0;
+		j = 0;
 		*correct_usage = true;
 		while (args[i][j])
 		{
 			if (ft_isalnum(args[i][j]) == false)
 			{
-				ft_shell_error("minishell: unset: `",0, 0);
-				ft_shell_error(args[i],0, 0);
-				ft_shell_error("': not a valid identifier\n",1, 0);
+				ft_shell_error("minishell: unset: `", 0, 0); //ft_shell_multi
+				ft_shell_error(args[i], 0, 0);
+				ft_shell_error("': not a valid identifier\n", 1, 0);
 				*correct_usage = false;
 				break ;
 			}
@@ -112,7 +112,7 @@ static void	ft_check_unset_usage(char **args, bool *correct_usage)
 char	**ft_unset(char **args, char **envp)
 {
 	bool	correct_usage;
-	
+
 	ft_check_unset_usage(args, &correct_usage);
 	envp = ft_make_unset_envp(args, envp, correct_usage);
 	g_shell.status = 0;

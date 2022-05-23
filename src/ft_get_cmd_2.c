@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_cmd_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 11:31:00 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:04:19 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	fill_argument(void *content)
 	tmp = ft_cmd_last(g_shell.cmd);
 	if (tmp->args[0])
 		tmp->args = put_envp(tmp->args, content, 0);
-	else 
+	else
 	{
 		tmp->args[0] = ft_strdup(content);
 		tmp->args[1] = NULL;
@@ -40,17 +40,17 @@ void	fill_redirect(char *redir, char *file)
 		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd, ft_dictinit("<", file));
 }
 
-bool is_pipe(t_list	*tmp)
+bool	is_pipe(t_list	*tmp)
 {
 	if (ft_strncmp("|", tmp->content, 1))
 		return (false);
 	return (true);
 }
 
-bool is_redir(t_list	*tmp)
+bool	is_redir(t_list	*tmp)
 {
-	if (!ft_strncmp(">", tmp->content, 1) ||
-			!ft_strncmp("<", tmp->content, 1))
+	if (!ft_strncmp(">", tmp->content, 1)
+		|| !ft_strncmp("<", tmp->content, 1))
 		return (true);
 	return (false);
 }
@@ -59,12 +59,12 @@ bool is_redir(t_list	*tmp)
 
 void	enum_cmd(void)
 {
-	int 	coun;
+	int		coun;
 	t_cmd	*temp_cmd;
 
-	coun =  0;
+	coun = 0;
 	temp_cmd = g_shell.cmd;
-	while(temp_cmd)
+	while (temp_cmd)
 	{
 		temp_cmd->i = ft_itoa(coun);
 		coun++;

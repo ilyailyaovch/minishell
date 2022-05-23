@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
+/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 11:27:01 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:38:06 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,9 @@ void	ft_free_list(t_list *a);
 
 /*	ft_errors.c */
 void	ft_error(char *argv, int exit_code);
-void 	ft_shell_error(char *argv, int exit_code, int exit_flag);
+void	ft_shell_error(char *argv, int exit_code, int exit_flag);
+void	ft_shell_error_multi(char *argv_2, char *argv_3,
+			char *argv_4, int exit_code);
 
 /*	ft_parser.c */
 void	ft_parser(void);
@@ -108,8 +110,8 @@ void	count_cmd(t_list *list);
 void	ft_get_cmd(void);
 
 /*	ft_get_cmd_2.c */
-bool 	is_pipe(t_list	*tmp);
-bool 	is_redir(t_list	*tmp);
+bool	is_pipe(t_list	*tmp);
+bool	is_redir(t_list	*tmp);
 void	enum_cmd(void);
 void	fill_redirect(char *redir, char *file);
 void	fill_argument(void *content);
@@ -141,7 +143,7 @@ t_cmd	*ft_cmdinit(void);
 int		ft_cmdlen(t_cmd *cmd);
 void	ft_free_cmd(t_cmd *cmd);
 t_cmd	*ft_cmd_last(t_cmd *lst);
-void	ft_cmdadd_back(t_cmd **lst,t_cmd *new);
+void	ft_cmdadd_back(t_cmd **lst, t_cmd *new);
 
 /*	ft_dicts.c */
 t_dict	*ft_dictinit(char *key, char *value);

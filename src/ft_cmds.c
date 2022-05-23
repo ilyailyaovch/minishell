@@ -6,7 +6,7 @@
 /*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:18:03 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/06 15:23:13 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 13:46:43 by spzona           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,18 @@ t_cmd	*ft_cmd_last(t_cmd *lst)
 	return (tmp);
 }
 
-void	ft_cmdadd_back(t_cmd **lst,t_cmd *new)
+void	ft_cmdadd_back(t_cmd **lst, t_cmd *new)
 {
 	if (!*lst)
 		(*lst) = new;
-	else 
+	else
 		ft_cmd_last(*lst)->next = new;
 }
 
 void	ft_free_cmd(t_cmd *cmd)
 {
 	t_cmd	*tmp;
-	
+
 	tmp = cmd;
 	while (tmp)
 	{
