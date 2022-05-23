@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_unset.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:07:25 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:45:28 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:39:53 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,8 @@ static void	ft_check_unset_usage(char **args, bool *correct_usage)
 		{
 			if (ft_isalnum(args[i][j]) == false)
 			{
-				ft_shell_error("minishell: unset: `", 0, 0); //ft_shell_multi
-				ft_shell_error(args[i], 0, 0);
-				ft_shell_error("': not a valid identifier\n", 1, 0);
+				ft_shell_error_multi("unset: `", args[i],
+					"': not a valid identifier\n", 1);
 				*correct_usage = false;
 				break ;
 			}

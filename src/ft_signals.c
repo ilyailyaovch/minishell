@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_signals.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:56:32 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:53:12 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:49:37 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	shell_handler(int sig)
 
 void	ft_signals(void)
 {
-	// signal(SIGINT, handler_quit);
-	// signal(SIGQUIT, handler_quit);
 	signal(SIGQUIT, SIG_IGN);
 	signal(SIGINT, shell_handler);
 }

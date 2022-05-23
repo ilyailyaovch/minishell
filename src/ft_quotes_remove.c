@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quotes_remove.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:42:13 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:56:22 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:49:14 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ void	ft_remove_extra_quotes(void)
 		tmp->content = (void *)rm_quotes(tmp->content);
 		tmp = tmp->next;
 	}
-	free (tmp);//?
+	free (tmp);//
 }

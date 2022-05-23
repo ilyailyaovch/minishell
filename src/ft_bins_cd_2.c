@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:17:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:26:16 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:37:22 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,11 @@ static void	if_checks(int j, int i, char *args, char *str)
 	if (j == 1 && i)
 		chdir(str);
 	else if (j != 1)
-	{
-		ft_shell_error("minishell: cd: ", 0, 0); //
-		ft_shell_error(args, 0, 0);
-		ft_shell_error(": No such file or directory\n", 1, 0);
-	}
+		ft_shell_error_multi("cd: ", args,
+			": No such file or directory\n", 1);
 	else if (j == 1 && !i)
-	{
-		ft_shell_error("minishell: cd: ", 0, 0);
-		ft_shell_error(args, 0, 0);
-		ft_shell_error(": Not a directory\n", 1, 0);
-	}
+		ft_shell_error_multi("cd: ", args,
+			": Not a directory\n", 1);
 }
 
 void	inside_validpath(char *str, int j, char *old_path, char *args)

@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:19:27 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:27:54 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:46:43 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,8 @@ static char	*find_cmd(char **paths, char **cmd_flags)
 	}
 	if (!cmd)
 	{
-		ft_shell_error("minishell: ", 0, 0);
-		ft_shell_error(cmd_flags[0], 0, 0);
-		ft_shell_error(": command not found\n", 127, 0);
+		ft_shell_error_multi(cmd_flags[0],
+			": not a valid identifier", "\n", 127);
 	}
 	return (NULL);
 }
@@ -111,17 +110,15 @@ static void	execute_command(t_cmd *cmd)
 	paths = get_paths(g_shell.envp);
 	if (!paths)
 	{
-		ft_shell_error("minishell: ", 0, 0);
-		ft_shell_error(cmd->args[0], 0, 0);
-		ft_shell_error(": command not found\n", 127, 0); //
+		ft_shell_error_multi(cmd->args[0],
+			": command not found", "\n", 127);
 	}
-	name = find_cmd(paths, cmd->args); //Если нет пути или unset?
+	name = find_cmd(paths, cmd->args);//Если_нет_пути_или_unset?
 	ft_free_mass(paths);
 	if (execve(name, cmd->args, g_shell.envp) == -1)
 	{
-		ft_shell_error("minishell: ", 0, 0);
-		ft_shell_error(cmd->args[0], 0, 0);
-		ft_shell_error(": command not found\n", 127, 0); //
+		ft_shell_error_multi(cmd->args[0],
+			": command not found", "\n", 127);
 	}
 	if (name)
 		free(name);

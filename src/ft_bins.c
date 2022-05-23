@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 12:53:57 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:00:30 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:33:53 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_exit(t_cmd *cmd)
 	if (!ft_strncmp(cmd->args[0], "exit", ft_strlen(cmd->args[0])))
 		ft_shell_error("exit\n", 0, 0);
 	if (cmd->args[1])
-		ft_shell_error("minishell: exit: too many arguments\n", 1, 0);
+		ft_shell_error_multi("exit: ", "too many arguments", "\n", 1);
 	exit(1);
 }
 
