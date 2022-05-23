@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_cmd_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 13:43:02 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:04:19 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:18:45 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,17 @@ void	fill_argument(void *content)
 void	fill_redirect(char *redir, char *file)
 {
 	if (!ft_strncmp(">>", redir, 2))
-		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd, ft_dictinit(">>", file));
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd,
+			ft_dictinit(">>", file));
 	else if (!ft_strncmp("<<", redir, 2))
-		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd, ft_dictinit("<<", file));
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd,
+			ft_dictinit("<<", file));
 	else if (!ft_strncmp(">", redir, 1))
-		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd, ft_dictinit(">", file));
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->outfd,
+			ft_dictinit(">", file));
 	else if (!ft_strncmp("<", redir, 1))
-		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd, ft_dictinit("<", file));
+		ft_dictadd_back(&ft_cmd_last(g_shell.cmd)->infd,
+			ft_dictinit("<", file));
 }
 
 bool	is_pipe(t_list	*tmp)

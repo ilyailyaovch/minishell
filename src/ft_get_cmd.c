@@ -6,14 +6,14 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/16 11:30:37 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:25:44 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
 /* counting cmds while avoiding pipes */
-	
+
 void	count_cmd(t_list *list)
 {
 	t_cmd	*tmp_cmd;

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:08:32 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/04 16:33:19 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:15:46 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-static char	*redirect(int *i, char *redir)
+static char	*redir(int *i, char *redir)
 {
 	char	*tmp;
 
@@ -26,14 +26,14 @@ static char	*redirect(int *i, char *redir)
 	return (tmp);
 }
 
-static char	*separator(int *i, char c)
+static char	*separ(int *i, char c)
 {
 	char	*tmp;
 
 	(void) i;
 	tmp = malloc(sizeof(char) * 2);
 	if (!tmp)
-		return (0);
+		return (NULL);
 	tmp[0] = c;
 	tmp[1] = '\0';
 	return (tmp);
@@ -99,15 +99,15 @@ void	ft_parser(void)
 		while (g_shell.line[i] != '\0' && g_shell.line[i] == ' ')
 			i++;
 		if (!ft_strncmp(g_shell.line + i, ">>", 2))
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redirect(&i, ">>")));
+			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redir(&i, ">>")));
 		else if (!ft_strncmp(g_shell.line + i, "<<", 2))
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redirect(&i, "<<")));
+			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)redir(&i, "<<")));
 		else if (g_shell.line[i] == '|')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '|')));
+			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separ(&i, '|')));
 		else if (g_shell.line[i] == '>')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '>')));
+			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separ(&i, '>')));
 		else if (g_shell.line[i] == '<')
-			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separator(&i, '<')));
+			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)separ(&i, '<')));
 		else if (g_shell.line + i)
 			ft_lstadd_back(&g_shell.list, ft_lstnew((void *)string(&i)));
 		i++;

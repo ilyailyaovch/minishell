@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:11:41 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:59:25 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:25:38 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/*	frees all at the end */
+
 void	ft_free_all(void)
 {
 	free(g_shell.line);
-	//ft_free_cmd(g_shell.cmd);
+	ft_free_cmd(g_shell.cmd);
 	ft_free_list(g_shell.list);
 }
 

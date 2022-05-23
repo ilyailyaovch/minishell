@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bins_cd_2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:17:16 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:01:52 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:26:16 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	if_checks(int j, int i, char *args, char *str)
 		chdir(str);
 	else if (j != 1)
 	{
-		ft_shell_error("minishell: cd: ", 0, 0);
+		ft_shell_error("minishell: cd: ", 0, 0); //
 		ft_shell_error(args, 0, 0);
 		ft_shell_error(": No such file or directory\n", 1, 0);
 	}
