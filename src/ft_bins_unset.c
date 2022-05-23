@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 13:07:25 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 15:54:35 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:29:42 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static char	**unset_from_envp(char *args, char **envp)
 	which should be unset
 	returns 1 if variable exists	*/
 
-static int	check_unset(char *args, char **envp)
+int	check_unset(char *args, char **envp)
 {
 	int	i;
 
@@ -95,7 +95,7 @@ static void	ft_check_unset_usage(char **args, bool *correct_usage)
 			{
 				ft_shell_error("minishell: unset: `",0, 0);
 				ft_shell_error(args[i],0, 0);
-				ft_shell_error("': not a valid identifier\n",0, 0);
+				ft_shell_error("': not a valid identifier\n",1, 0);
 				*correct_usage = false;
 				break ;
 			}

@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 11:33:30 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:35:11 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_executor(t_cmd *cmd)
 	while(child.i < child.len)
 	{
 		check_exit(cmd);
-		//check_cd();
+		check_cd(cmd, child.i);
 		if (pipe(child.pipe[child.current]) == -1)
 			ft_error("minishell: pipe: ", EPIPE);
 		child.pid = fork();

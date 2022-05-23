@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:19:27 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 15:54:49 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:31:03 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static char	*find_cmd(char **paths, char **cmd_flags)
 	return (NULL);
 }
 
-/*	func executes build-is */
+/*	func checks and executes build-is */
 
 static int	exucute_build_ins(t_cmd *cmd)
 {
@@ -88,10 +88,10 @@ static int	exucute_build_ins(t_cmd *cmd)
 		ft_pwd();
 	else if (!ft_strncmp(cmd->args[0], "env", ft_strlen(cmd->args[0])))
 		ft_env();
-	// else if (!ft_strncmp(cmd->args[0], "export", ft_strlen(cmd->args[0])))
-	// 	g_shell.envp = ft_export(cmd->args); 				//NOT
+	else if (!ft_strncmp(cmd->args[0], "export", ft_strlen(cmd->args[0])))
+	 	g_shell.envp = ft_export(cmd->args);
 	else if (!ft_strncmp(cmd->args[0], "unset", ft_strlen(cmd->args[0])))
-		g_shell.envp = ft_unset(cmd->args, g_shell.envp);	//NOT
+		g_shell.envp = ft_unset(cmd->args, g_shell.envp);
 	else
 		flag = 0;
 	return flag;
@@ -101,7 +101,7 @@ static int	exucute_build_ins(t_cmd *cmd)
 	1) takes all possible paths
 	2) looks for cmd with an access by path
 	3) executes cmd
-	4) frees everything							*/
+	4) frees everything								*/
 
 static void	execute_command(t_cmd *cmd)
 {

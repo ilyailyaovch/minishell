@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 14:40:25 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:27:01 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdbool.h>
+# include <dirent.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 
 # include "../readline/tilde.h"
 # include "../readline/rlconf.h"
@@ -86,6 +89,7 @@ void	minishell(void);
 
 /*	ft_init.c */
 void	ft_new_envp(char **envp);
+char	**ft_new_envp_return(char **envp);
 
 /*	ft_free.c */
 void	ft_free_all(void);
@@ -109,7 +113,6 @@ bool 	is_redir(t_list	*tmp);
 void	enum_cmd(void);
 void	fill_redirect(char *redir, char *file);
 void	fill_argument(void *content);
-
 
 /*	ft_signals.c */
 void	shell_handler(int sig);
@@ -154,6 +157,7 @@ void	ft_executor(t_cmd *cmd);
 
 /*	ft_executor_2.c */
 void	check_exit(t_cmd *cmd);
+void	check_cd(t_cmd *cmd, int n);
 void	collect_variables(void);
 void	get_variables(void);
 
@@ -181,5 +185,28 @@ void	ft_env(void);
 
 /*	ft_bins_unset.c */
 char	**ft_unset(char **args, char **envp);
+int		check_unset(char *args, char **envp);
+
+/*	ft_bins_cd ... */
+char	**ft_cd(char **args, int ifcd);
+char	**cd_pwd_oldpwd(char *old_path);
+char	*ft_strchr_for_mini(const char *s, int c);
+
+void	validpath(char *args, char *old_path, int ifcd);
+void	inside_validpath(char *str, int j, char *old_path, char *args);
+
+/*	ft_bins_export ... */
+char	**ft_export(char **args);
+void	exp_withot_args(char **envp);
+void	change_envp(char *new, char **args, int i);
+char	*check_double(char *args, char **envp);
+
+int		ft_sym_export(char *str);
+char	**sort_mass_bubble(char **mass);
+char	**mass_quots_after(char **tmpmass);
+char	**mass_quots_before(char **tmpmass);
+
+char	**export_envp(char **envp, char *str, int free);
+char	**replace_envp_el(char **envp, char *args, char *new);
 
 #endif

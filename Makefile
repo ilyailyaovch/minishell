@@ -42,8 +42,11 @@ SOURCES	=	main.c				ft_parser.c\
 			put_envp.c			utils1.c\
 			ft_redir_heredoc.c	ft_exec_children.c\
 			ft_bins.c			ft_cmds.c\
-			ft_bins_cd.c\
-			ft_bins_export.c\
+			ft_bins_cd_1.c\
+			ft_bins_cd_2.c\
+			ft_bins_export_1.c\
+			ft_bins_export_2.c\
+			ft_bins_export_3.c\
 			ft_bins_unset.c\
 
 all		: $(NAME)
@@ -53,7 +56,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
 
 $(NAME)	: $(OBJ) $(HEADER)
 	@make -C $(LIBDIR)/
-	$(CC) $(FLAGS) $(FLAGS_R) $(LIBFT) $(OBJ) -o $@
+	@$(CC) $(FLAGS) $(FLAGS_R) $(LIBFT) $(OBJ) -o $@
 	@echo "compiled $@"
 	
 $(OBJDIR):

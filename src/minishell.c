@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 11:33:26 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:44:22 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_init_g_shell(void)
 {
-	//signal(SIGQUIT, SIG_IGN);
-	//signal(SIGINT, shell_handler);
 	if ((pipe(g_shell.fd[0])) == -1)
 		ft_shell_error("minishell: pipe: \n", errno, EXIT_FLAG);
 	if ((pipe(g_shell.fd[1])) == -1)
@@ -53,34 +51,9 @@ void	minishell(void)
 			ft_parser();
 			ft_remove_extra_quotes();
 			ft_get_cmd();
-			//ft_signals();				//не надо вроде
-			ft_executor(g_shell.cmd); 	//
-			ft_free_all();				//
-
-			//Написать проверку на лист
-			// t_list *tmp;
-			// tmp = g_shell.list;
-			// while (tmp)
-			// {
-			// 	printf("Elem of list: %s\n", tmp->content);
-			// 	tmp = tmp->next;
-			// }
-
-			//Написать проверку на cmd
-			// t_cmd	*tmp_c;
-			// tmp_c = g_shell.cmd;
-			// while (tmp_c)
-			// {
-			// 	printf("cmd	arg: %s\n", tmp_c->args[0]);
-			// 	printf("cmd	arg: %s\n", tmp_c->args[1]);
-			// 	printf("cmd	count: %d\n", tmp_c->count);
-			// 	//printf("cmd	in_dick_key: %s\n", tmp_c->infd->key);
-			// 	//printf("cmd	in_dick_value: %s\n", tmp_c->infd->value);
-			// 	printf("cmd	in_dick_key: %s\n", tmp_c->outfd->key);
-			// 	printf("cmd	in_dick_value: %s\n", tmp_c->outfd->value);
-			// 	printf("enumed cmd: %s\n", tmp_c->i);
-			// 	tmp_c = tmp_c->next;
-			// }
+			//ft_signals();
+			ft_executor(g_shell.cmd);
+			ft_free_all();
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 11:27:37 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/16 10:32:45 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/23 11:12:24 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@ void	check_exit(t_cmd *cmd)
 {
 	if (!ft_strncmp(cmd->args[0], "exit", ft_strlen(cmd->args[0])))
 		ft_exit(cmd);
+}
+
+void	check_cd(t_cmd *cmd, int n)
+{
+	int	docmd;
+
+	if (ft_cmdlen(cmd) == 1 && !n)
+		docmd = 1;
+	else
+		docmd = 0;
+	if (!ft_strncmp(cmd->args[0], "cd", ft_strlen(cmd->args[0])))
+		g_shell.envp = ft_cd(cmd->args, docmd);
 }
 
 void	collect_variables(void)
