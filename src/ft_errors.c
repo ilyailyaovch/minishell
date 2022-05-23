@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_errors.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 19:43:48 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:47:56 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/23 14:51:31 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_shell_error(char *argv, int exit_code, int exit_flag)
 void	ft_shell_error_multi(char *argv_2, char *argv_3,
 		char *argv_4, int exit_code)
 {
-	printf(RED"myshell: "WTH);
+	printf(YELW"myshell: "WTH);
 	printf("%s", argv_2);
 	printf("%s", argv_3);
 	printf("%s", argv_4);
