@@ -6,11 +6,19 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/24 15:09:05 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:34:40 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+void	ft_beautiful_header(float ver)
+{
+	printf(BLUE"------------------------------\n"WTH);
+	printf(BLUE"WELLCUM to minishell by ...\n"WTH);
+	printf(BLUE"Version %.2f\n"WTH, ver);
+	printf(BLUE"------------------------------\n"WTH);
+}
 
 void	ft_init_g_shell(void)
 {
@@ -35,10 +43,7 @@ void	ft_readline(void)
 
 void	minishell(void)
 {
-	printf(BLUE"------------------------------\n"WTH);
-	printf(BLUE"WELLCUM to minishell by ...\n"WTH);
-	printf(BLUE"Version 1.0\n"WTH);
-	printf(BLUE"------------------------------\n"WTH);
+	ft_beautiful_header(1.10);
 	while (true)
 	{
 		ft_init_g_shell();
