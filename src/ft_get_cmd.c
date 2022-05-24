@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/23 14:25:44 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 13:21:48 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,15 @@ void	count_cmd(t_list *list)
 		ft_error("count_cmd", ENOMEM);
 }
 
+static void	ft_pipe_case(t_list	*tmp_list)
+{
+	if (is_pipe(tmp_list) == false)
+	{
+		ft_cmdadd_back(&g_shell.cmd, ft_cmdinit());
+		count_cmd(tmp_list);
+	}
+}
+
 /*	func fills t_cmd with needed commands and 
 	makes dict from special symbols	*/
 
@@ -46,11 +55,7 @@ void	ft_get_cmd(void)
 	tmp_list = g_shell.list;
 	while (tmp_list)
 	{
-		if (is_pipe(tmp_list) == false)
-		{
-			ft_cmdadd_back(&g_shell.cmd, ft_cmdinit());
-			count_cmd(tmp_list);
-		}
+		ft_pipe_case(tmp_list);
 		while (tmp_list && (is_pipe(tmp_list) == false))
 		{
 			if (is_redir(tmp_list) == true)

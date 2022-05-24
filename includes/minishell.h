@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spzona <spzona@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 09:56:20 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 13:38:06 by spzona           ###   ########.fr       */
+/*   Updated: 2022/05/24 13:29:58 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,10 @@ void	ft_init_g_shell(void);
 void	ft_readline(void);
 void	minishell(void);
 
-/*	ft_init.c */
+/*	ft_init_envp.c */
 void	ft_new_envp(char **envp);
 char	**ft_new_envp_return(char **envp);
+char	**put_envp(char **envp, char *str, int free_flag);
 
 /*	ft_free.c */
 void	ft_free_all(void);
@@ -151,9 +152,6 @@ t_dict	*ft_dict_last(t_dict *lst);
 void	ft_free_dict(t_dict *dict);
 void	ft_dictadd_back(t_dict **lst, t_dict *new);
 
-/*	put_envp.c */
-char	**put_envp(char **envp, char *str, int free_flag);
-
 /*	ft_executor.c */
 void	ft_executor(t_cmd *cmd);
 
@@ -172,9 +170,11 @@ void	ft_execute(t_cmd *cmd);
 /*	ft_execute.c */
 void	ft_execute(t_cmd *cmd);
 
-/*	ft_redir_heredoc.c*/
+/*	ft_redir.c*/
 void	redirect_out(t_cmd *cmd);
 void	redirect_in(t_cmd *cmd);
+
+/*	ft_redir_heredoc.c*/
 char	*heredoc(char *delim);
 void	tmp_heredoc_file(char *delim, t_cmd *cmd);
 void	ft_init_heredoc_instd(t_cmd *cmd);

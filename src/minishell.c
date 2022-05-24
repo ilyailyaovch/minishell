@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:50:27 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:09:05 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,16 @@ void	ft_readline(void)
 {
 	g_shell.line = readline(GREEN"myshell> "WTH);
 	if (!g_shell.line)
-		ft_shell_error("\033[1A\033[0;32mmyshell>\033[0;37m exit\n", 1, EXIT_FLAG);
+		ft_shell_error("\033[1A\033[0;31mmyshell>\033[0;37m exit\n", 1, EXIT_FLAG);
 	add_history(g_shell.line);
 }
 
 void	minishell(void)
 {
+	printf(BLUE"------------------------------\n"WTH);
 	printf(BLUE"WELLCUM to minishell by ...\n"WTH);
+	printf(BLUE"Version 1.0\n"WTH);
+	printf(BLUE"------------------------------\n"WTH);
 	while (true)
 	{
 		ft_init_g_shell();
@@ -51,7 +54,6 @@ void	minishell(void)
 			ft_parser();
 			ft_remove_extra_quotes();
 			ft_get_cmd();
-			//ft_signals();
 			ft_executor(g_shell.cmd);
 			ft_free_all();
 		}

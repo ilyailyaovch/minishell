@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 18:19:27 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:46:43 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 12:59:12 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ static void	execute_command(t_cmd *cmd)
 		ft_shell_error_multi(cmd->args[0],
 			": command not found", "\n", 127);
 	}
-	name = find_cmd(paths, cmd->args);//Если_нет_пути_или_unset?
+	name = find_cmd(paths, cmd->args);
 	ft_free_mass(paths);
 	if (execve(name, cmd->args, g_shell.envp) == -1)
 	{
