@@ -6,13 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 10:45:36 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/24 15:34:40 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:40:07 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-void	ft_beautiful_header(float ver)
+static void	ft_beautiful_header(float ver)
 {
 	printf(BLUE"------------------------------\n"WTH);
 	printf(BLUE"WELLCUM to minishell by ...\n"WTH);
