@@ -6,13 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:11:41 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 14:25:38 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:26:28 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
-/*	frees all at the end */
+/*	frees all at the end of programm */
 
 void	ft_free_all(void)
 {

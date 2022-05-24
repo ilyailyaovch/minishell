@@ -6,7 +6,7 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:23:26 by spzona            #+#    #+#             */
-/*   Updated: 2022/05/24 13:21:48 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:27:19 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	count_cmd(t_list *list)
 	if (!tmp_cmd->args)
 		ft_error("count_cmd", ENOMEM);
 }
+
+/*	supporting func to ft_get_cmd */
 
 static void	ft_pipe_case(t_list	*tmp_list)
 {

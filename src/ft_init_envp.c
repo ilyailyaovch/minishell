@@ -6,11 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:08:38 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/24 13:25:55 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:28:58 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+/*	creates g_shell.envp */
 
 void	ft_new_envp(char **envp)
 {
@@ -27,6 +29,8 @@ void	ft_new_envp(char **envp)
 	g_shell.envp = new_env;
 	g_shell.status = 0;
 }
+
+/*	creates g_shell.envp, returns mass */
 
 char	**ft_new_envp_return(char **envp)
 {

@@ -6,11 +6,13 @@
 /*   By: pleoma <pleoma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 09:24:39 by pleoma            #+#    #+#             */
-/*   Updated: 2022/05/23 15:11:25 by pleoma           ###   ########.fr       */
+/*   Updated: 2022/05/24 15:26:11 by pleoma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+/*	supporting func to ft_executor */
 
 static void	ft_replace_pipe(t_child	*child)
 {
@@ -19,7 +21,7 @@ static void	ft_replace_pipe(t_child	*child)
 	child->current = 1 - child->current;
 }
 
-/* makes processes and executes cmds */
+/*	makes processes and executes cmds */
 
 void	ft_executor(t_cmd *cmd)
 {
