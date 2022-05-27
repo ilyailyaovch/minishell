@@ -24,7 +24,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Group project in school 21 (Ecole 42 franchise) about buildinga  simple shell.
+Group project in school 21 (Ecole 42 franchise) about building a simple shell.
 
 All src files will be stored in separate directories to avoid any problems while testing and compiling. Right now there is only one bonus feature and all mandatory ones.
 
@@ -91,6 +91,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Ivan Surganov - [@isurganov](https://www.linkedin.com/in/ivansurganov/) - devsurganov@gmail.com
+
 Ilya Ovchinnikov - [@ilyailyaovch](https://t.me/ilyailyaovch) - ilyailyaovch@gmail.com
 
 Project Link: [https://github.com/ilyailyaovch/minishell](https://github.com/ilyailyaovch/minishell)
