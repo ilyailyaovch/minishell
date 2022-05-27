@@ -48,7 +48,7 @@ First of all clone my repo with ```git clone```.
 
 ### Run it
 
-Some steps how to run this lib.
+Some steps how to run this minishell.
 * run Makefile
   ```sh
   make 
@@ -57,7 +57,7 @@ Some steps how to run this lib.
   ```sh
   make clean
   ```
-* clean obj + libft.a
+* clean obj + binary
   ```sh
   make fclean
   ```
